@@ -56,7 +56,7 @@ font-2 = "MesloLGS NF Regular:pixelsize=10;1"
 
 modules-left = i3 xwindow
 modules-center = date
-modules-right = pulseaudio eth powermenu
+modules-right = pulseaudio eth power_btn
 
 
 tray-position = right
@@ -157,26 +157,26 @@ bar-volume-empty = ""
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.on_surface}
 
-[module/powermenu]
-type = custom/menu
+;menu-0-0 = "Neustart "
+;menu-0-0-exec = systemctl reboot
+;menu-0-1 = "Herunterfahren "
+;menu-0-1-exec = systemctl poweroff
+;menu-0-2 = "Energie Sparen "
+;menu-0-2-exec = systemctl suspend
 
-expand-right = false
+[module/power_btn]
+type = custom/script
+exec = uptime
+tail = false
 
-format-spacing = 1
+format = <label>
+format-foreground = #000dd
+formet-background = ${colors.surface}
+formet-foreground = ${colors.on_surface}
+format-padding = 1
+label = ⏻
 
-label-open = POWER
-label-open-foreground = ${colors.primary}
-label-close = CLOSE
-label-close-foreground = ${colors.primary}
-label-separator = |
-label-separator-foreground = ${colors.on_surface}
-
-menu-0-0 = "Neustart "
-menu-0-0-exec = systemctl reboot
-menu-0-1 = "Herunterfahren "
-menu-0-1-exec = systemctl poweroff
-menu-0-2 = "Energie Sparen "
-menu-0-2-exec = systemctl suspend
+click-left = $HOME/.config/polybar/power_menu.sh 
 
 [settings]
 screenchange-reload = true
