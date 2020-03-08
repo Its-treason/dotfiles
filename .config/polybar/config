@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-surface = #FF2B2929
+surface = #2B2929
 on_surface = #F7F7F7
 primary = #e95420
 
@@ -50,12 +50,12 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "MesloLGS NF:pixelsize=9:antialias=true;2"
-font-1 = "MesloLGS NF:fontformat=truetype:size=8:antialias=true;"
-font-2 = "MesloLGS NF Regular:pixelsize=10;1"
+font-0 = "MesloLGS NF:size=9:antialias=true;2"
+font-1 = "MesloLGS NF:pixelsize=13:antialias=true;3"
+font-2 = "MesloLGS NF:pixelsizesize=15:antialias=true;3"
 
 modules-left = i3 xwindow
-modules-center = date
+modules-center = calendar
 modules-right = pulseaudio eth power_btn
 
 
@@ -116,67 +116,39 @@ label-connected = "ﰬ%downspeed% ﰵ%upspeed%"
 
 label-disconnected = No Connection
 
-[module/date]
-type = internal/date
-interval = 5
-
-date = %d.%b.%Y
-time = %H:%M
-
-format-prefix-foreground = ${colors.on_surface}
-
-label = %time% - %date%
-
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = 墳 %percentage%%
-label-volume-foreground = ${root.foreground}
+format-volume = <ramp-volume> <label-volume>
+
+ramp-volume-0 = "%{T3}%{T-}"
+ramp-volume-1 = "%{T3}%{T-}"
+ramp-volume-2 = "%{T3}%{T-}"
+
+label-volume = "%percentage%%"
 
 # set your standard output. Get all sinks with: 'pactl list short sinks'
 sink = alsa_output.pci-0000_28_00.3.analog-stereo
 
-label-muted = " MUTED"
+label-muted = "%{T2}婢%{T-} MUTED"
 label-muted-foreground = #888
 
-bar-volume-width = 1
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = ""
-bar-volume-indicator-font = 2
-bar-volume-fill = ""
-bar-volume-fill-font = 2
-bar-volume-empty = ""
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.on_surface}
-
-;menu-0-0 = "Neustart "
-;menu-0-0-exec = systemctl reboot
-;menu-0-1 = "Herunterfahren "
-;menu-0-1-exec = systemctl poweroff
-;menu-0-2 = "Energie Sparen "
-;menu-0-2-exec = systemctl suspend
-
 [module/power_btn]
+type = custom/text
+
+content = "⏻"
+content-font = 2
+content-background = ${colors.surface}
+content-foreground = ${colors.on_surface}
+content-padding = 0
+
+click-left = $HOME/.config/polybar/power_menu.sh
+
+[module/calendar]
 type = custom/script
-exec = uptime
-tail = false
-
-format = <label>
-format-foreground = #000dd
-formet-background = ${colors.surface}
-formet-foreground = ${colors.on_surface}
-format-padding = 1
-label = ⏻
-
-click-left = $HOME/.config/polybar/power_menu.sh 
+exec = ~/.config/polybar/cal.sh
+interval = 5
+click-left = ~/.config/polybar/cal.sh --popup &
 
 [settings]
 screenchange-reload = true

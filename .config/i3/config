@@ -140,24 +140,23 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Theme colors
-# class                   border  backgr. text    indic.   child_border
-  client.focused          #e95420 #FF0000 #FF0000 #e95420  #e95420
-  client.focused_inactive #555555 #FF0000 #FF0000 #45494800  #555555
-  client.unfocused        #555555 #FF0000 #FF0000 #45494800  #555555
-  client.urgent           #EE0000 #FF0000 #FF0000 #268BD200  #555555
-  client.placeholder      #FF0000 #FF0000 #FF0000 #00000000  #555555
+# class                 border  backgr. text    indic.   child_border
+client.focused          #e95420 #2B2929 #F7F7F7 #e95420  #e95420
+client.focused_inactive #454242 #2B2929 #F7F7F7 #454242  #454242
+client.unfocused        #2B2929 #2B2929 #F7F7F7 #2B2929  #2B2929
+client.urgent           #EE0000 #2B2929 #F7F7F7 #EE0000  #EE0000
+client.placeholder      #2B2929 #2B2929 #F7F7F7 #2B2929  #2B2929
 
-  client.background       #FFFFFFBB
-
-
+client.background       #2B2929
 
 for_window [class="^.*"] border pixel 2
 for_window [class="albert"] border pixel 0
+for_window [class="Yad" title="yad-calendar"] floating enable
 
 hide_edge_borders none
 
 gaps inner 4
-gaps outer 2 
+gaps outer 2
 smart_borders no_gaps
 
 bindsym $mod+space exec albert show
@@ -168,6 +167,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id albert
 
 exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id /opt/nextcloud.AppImage --background
 
 # Lock screen
 bindsym $mod+l exec xscreensaver-command -l

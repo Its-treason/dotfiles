@@ -1,0 +1,16 @@
+rofi.color-enabled: true
+!                  'background', 'border', 'separator'
+rofi.color-window: #2B2929, #00000000, #e95420
+! State:           'bg',     'fg',     'bgalt',  'Hightlicted bg',   'Hightlicted fg'
+rofi.color-normal: #2B2929, #F7F7F7, argb:00000000, #e95420, #F7F7F7
+
+rofi.eh: 1
+rofi.line-margin: 4
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+rofi.lines: 3
+rofi.columns: 1
+rofi.width: 15
+rofi.padding: 10
+rofi.bw: 0
+rofi.auto-select: false

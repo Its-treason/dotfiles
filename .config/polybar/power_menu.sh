@@ -7,7 +7,7 @@ theme=${1:-$HOME/.config/rofi/power.rasi}
 selection=$(echo -e "${options}" | rofi -p "" -dmenu -i -config $theme)
 case "${selection}" in
   "Shutdown")
-    Shutdown now;;
+    shutdown now;;
   "Reboot")
     systemctl reboot;;
   "Suspend")
