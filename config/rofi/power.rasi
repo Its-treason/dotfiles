@@ -95,147 +95,165 @@ configuration {
 }
 
 * {
-    surface: #2B2929;
-    on-surface: #F7F7F7;
-    primary: #e95420;
-
-
-    red:                         rgba ( 220, 50, 47, 100 % );
-    selected-active-foreground:  @background;
-    lightfg:                     rgba ( 88, 104, 117, 100 % );
-    separatorcolor:              rgba ( 233, 84, 32, 100 % );
-    urgent-foreground:           @red;
-    alternate-urgent-background: @lightbg;
-    lightbg:                     rgba ( 238, 232, 213, 100 % );
-    spacing:                     2;
-    border-color:                rgba ( 0, 0, 0, 0 % );
-    normal-background:           rgba ( 43, 41, 41, 100 % );
-    background-color:            rgba ( 0, 0, 0, 0 % );
-    alternate-active-background: @lightbg;
-    active-foreground:           @blue;
-    blue:                        rgba ( 38, 139, 210, 100 % );
-    urgent-background:           @background;
-    alternate-normal-foreground: @foreground;
-    selected-active-background:  @blue;
-    background:                  rgba ( 43, 41, 41, 100 % );
-    selected-normal-foreground:  rgba ( 247, 247, 247, 100 % );
-    active-background:           @background;
-    alternate-active-foreground: @blue;
-    alternate-normal-background: rgba ( 0, 0, 0, 0 % );
-    foreground:                  rgba ( 247, 247, 247, 100 % );
-    selected-urgent-background:  @red;
-    selected-urgent-foreground:  @background;
-    normal-foreground:           @foreground;
-    alternate-urgent-foreground: @red;
-    selected-normal-background:  rgba ( 233, 84, 32, 100 % );
+  surface: #2B2929;
+  on-surface: #F7F7F7;
+  primary: #e95420;
+  red: rgba (220, 50, 47, 100 %);
+  selected-active-foreground: @background;
+  lightfg: rgba (88, 104, 117, 100 %);
+  separatorcolor: rgba (233, 84, 32, 100 %);
+  urgent-foreground: @red;
+  alternate-urgent-background: @lightbg;
+  lightbg: rgba (238, 232, 213, 100 %);
+  spacing: 2;
+  border-color: rgba (0, 0, 0, 0 %);
+  normal-background: rgba (43, 41, 41, 100 %);
+  background-color: rgba (0, 0, 0, 0 %);
+  alternate-active-background: @lightbg;
+  active-foreground: @blue;
+  blue: rgba (38, 139, 210, 100 %);
+  urgent-background: @background;
+  alternate-normal-foreground: @foreground;
+  selected-active-background: @blue;
+  background: rgba (43, 41, 41, 100 %);
+  selected-normal-foreground: rgba (247, 247, 247, 100 %);
+  active-background: @background;
+  alternate-active-foreground: @blue;
+  alternate-normal-background: rgba (0, 0, 0, 0 %);
+  foreground: rgba (247, 247, 247, 100 %);
+  selected-urgent-background: @red;
+  selected-urgent-foreground: @background;
+  normal-foreground: @foreground;
+  alternate-urgent-foreground: @red;
+  selected-normal-background: rgba (233, 84, 32, 100 %);
 }
+
 window {
-    padding:          10;
-    background-color: @surface;
-    border:           0;
+  border-radius: 4px;
+  padding: 5px 0;
+  background-color: @surface;
+  border: 0;
 }
+
 mainbox {
-    padding: 0;
-    border:  0;
+  padding: 0;
+  border: 0;
 }
+
 message {
-    padding:      2px ;
-    border-color: @primary;
-    border:       2px 0px 0px ;
+  padding: 0;
+  border-color: @primary;
+  border: 2px 0px 0px;
 }
+
 textbox {
-    text-color: @on-surface;
+  text-color: @on-surface;
 }
+
 listview {
-    padding:      0px 0px 0px ;
-    scrollbar:    false;
-    border-color: @separatorcolor;
-    spacing:      4px ;
-    fixed-height: 0;
-    border:       0px 0px 0px ;
+  padding: 0px 0px 0px;
+  scrollbar: false;
+  border-color: 0;
+  spacing: 4px;
+  fixed-height: 0;
+  border: 0;
 }
+
 element {
-    padding: 2px ;
-    border:  0;
+  padding: 5px 25px;
+  border: 0;
 }
+
 element normal.normal {
-    background-color: @normal-background;
-    text-color:       @normal-foreground;
+  background-color: @surface ;
+  text-color: @on-surface;
 }
+
 element normal.urgent {
-    background-color: @urgent-background;
-    text-color:       @urgent-foreground;
+  background-color: @surface;
+  text-color: @on-surface;
 }
+
 element normal.active {
-    background-color: @active-background;
-    text-color:       @active-foreground;
+  background-color: @surface;
+  text-color: @on-surface;
 }
+
 element selected.normal {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
+  background-color: @primary;
+  text-color: @on-surface;
 }
+
 element selected.urgent {
-    background-color: @selected-urgent-background;
-    text-color:       @selected-urgent-foreground;
+  background-color: @primary;
+  text-color: @on-surface;
 }
+
 element selected.active {
-    background-color: @selected-active-background;
-    text-color:       @selected-active-foreground;
+  background-color: @primary;
+  text-color: @on-surface;
 }
+
 element alternate.normal {
-    background-color: @alternate-normal-background;
-    text-color:       @alternate-normal-foreground;
+  background-color: @surface;
+  text-color: @on-surface;
 }
+
 element alternate.urgent {
-    background-color: @alternate-urgent-background;
-    text-color:       @alternate-urgent-foreground;
+  background-color: @alternate-urgent-background;
+  text-color: @alternate-urgent-foreground;
 }
+
 element alternate.active {
-    background-color: @alternate-active-background;
-    text-color:       @alternate-active-foreground;
+  background-color: @alternate-active-background;
+  text-color: @alternate-active-foreground;
 }
+
 scrollbar {
-    enabled: false;
-    width:        4px ;
-    padding:      0;
-    handle-width: 8px ;
-    border:       0;
-    handle-color: @normal-foreground;
+  enabled: false;
 }
+
 sidebar {
-    border-color: @separatorcolor;
-    border:       2px 0px 0px ;
+  border-color: @separatorcolor;
+  border: 0px 0px 0px;
 }
+
 button {
-    spacing:    0;
-    text-color: @normal-foreground;
+  spacing: 0;
+  text-color: @normal-foreground;
 }
+
 button selected {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
+  background-color: @selected-normal-background;
+  text-color: @selected-normal-foreground;
 }
+
 inputbar {
-    enabled: false;
-    padding:    2px ;
-    spacing:    0px ;
-    text-color: @normal-foreground;
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+  enabled: false;
+  padding: 2px;
+  spacing: 0px;
+  text-color: @normal-foreground;
+  children: [ prompt, textbox-prompt-colon, entry, case-indicator];
 }
+
 case-indicator {
-    spacing:    0;
-    text-color: @normal-foreground;
+  spacing: 0;
+  text-color: @normal-foreground;
 }
+
 entry {
-    spacing:    0;
-    text-color: @normal-foreground;
+  spacing: 0;
+  text-color: @normal-foreground;
 }
+
 prompt {
-    spacing:    0;
-    text-color: @normal-foreground;
+  spacing: 0;
+  text-color: @normal-foreground;
 }
+
 textbox-prompt-colon {
-    margin:     0px 0.3000em 0.0000em 0.0000em ;
-    expand:     false;
-    str:        "";
-    text-color: inherit;
+  margin: 0px 0.3000em 0.0000em 0.0000em;
+  expand: false;
+  str: "";
+  text-color: inherit;
 }

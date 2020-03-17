@@ -21,7 +21,7 @@ surface = #2B2929
 on_surface = #F7F7F7
 primary = #e95420
 
-alert = #EE0000
+alert = #FF0000
 
 [bar/bar1]
 monitor = ${env:MONITOR}
@@ -36,7 +36,7 @@ background = ${colors.surface}
 foreground = ${colors.on_surface}
 
 line-size = 9
-line-color = #f00
+line-color = ${colors.on_surface}
 
 border-top-size = 5
 border-right-size = 10

@@ -5,7 +5,7 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-exec --no-startup-id compton
+exec_always --no-startup-id compton
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -141,9 +141,9 @@ bindsym $mod+r mode "resize"
 
 # Theme colors
 # class                 border  backgr. text    indic.   child_border
-client.focused          #e95420 #2B2929 #F7F7F7 #e95420  #e95420
-client.focused_inactive #454242 #2B2929 #F7F7F7 #454242  #454242
-client.unfocused        #2B2929 #2B2929 #F7F7F7 #2B2929  #2B2929
+client.focused          #E95420 #2B2929 #F7F7F7 #E95420  #E95420
+client.focused_inactive #383838 #2B2929 #F7F7F7 #383838  #383838
+client.unfocused        #353535 #2B2929 #F7F7F7 #353535  #353535
 client.urgent           #EE0000 #2B2929 #F7F7F7 #EE0000  #EE0000
 client.placeholder      #2B2929 #2B2929 #F7F7F7 #2B2929  #2B2929
 
@@ -155,8 +155,8 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 
 hide_edge_borders none
 
-gaps inner 4
-gaps outer 2
+gaps inner 5
+gaps outer 5
 smart_borders no_gaps
 
 bindsym $mod+space exec albert show
@@ -166,7 +166,6 @@ bindsym $mod+Control+Right move workspace to output right
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id albert
 
-exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id /opt/nextcloud.AppImage --background
 
 # Lock screen
