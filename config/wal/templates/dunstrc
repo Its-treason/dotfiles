@@ -1,15 +1,15 @@
 [frame]
     width = 0
-    color = "#E95420"
+    color = "{color1}"
 
 [urgency_low]
-    background = "#606060"
-    foreground = "#F7F7F7"
+    background = "{background}"
+    foreground = "{foreground}"
     timeout = 10
 
 [urgency_normal]
-    background = "#212121"
-    foreground = "#F7F7F7"
+    background = "{background}"
+    foreground = "{foreground}"
     timeout = 10
 
 [urgency_critical]
@@ -27,7 +27,7 @@
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     format = "%a\n<b>%s</b>\n%b\n%p"
 
-    # The geometry of the window. Format: [{width}]x{height}[+/-{x}+/-{y}]
+    # The geometry of the window. Format: [width]xheight[+/-x+/-y]
     # The height = number of notifications, all other variables are px
     # Omit width, provide height for full-screen width notifications
     # If width is 0, window will fit to longest message
@@ -85,9 +85,8 @@
     # Close all notifications
     close_all = ctrl+shift+space
 
-    # Recall last message(s) 
+    # Recall last message(s)
     history = mod1+n
 
     # Context menu
     # context = Mod4+Tab
-
