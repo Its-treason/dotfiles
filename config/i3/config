@@ -2,6 +2,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+exec --no-startup-id xrdb -merge ~/.cache/wal/colors.Xresources
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -118,7 +120,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec $HOME/.config/polybar/power_menu.sh 
+bindsym $mod+Shift+e exec $HOME/.config/polybar/power_menu.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -170,12 +172,13 @@ gaps inner 5
 gaps outer 5
 smart_borders no_gaps
 
-bindsym $mod+space exec albert show
+# bindsym $mod+space exec albert show
+bindsym $mod+space exec rofi -show drun -config $HOME/.cache/wal/run.rasi -show-icons -icon-theme Yaru
 bindsym $mod+Control+Left move workspace to output left
 bindsym $mod+Control+Right move workspace to output right
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh > polylog
-exec_always --no-startup-id albert
+# exec_always --no-startup-id albert
 
 exec --no-startup-id /opt/nextcloud.AppImage --background
 
