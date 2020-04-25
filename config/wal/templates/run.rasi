@@ -151,7 +151,7 @@ configuration {{
     red:                         rgba ( 220, 50, 47, 100 % );
     selected-active-foreground:  var(background);
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    separatorcolor:              var(foreground);
+    separatorcolor:              var(primary);
     urgent-foreground:           var(red);
     alternate-urgent-background: var(lightbg);
     lightbg:                     var(background);
@@ -289,8 +289,7 @@ textbox-prompt-colon {{
     margin:     0px 0.3000em 0.0000em 0.0000em ;
     expand:     false;
     str:        ">";
-    text-color: inherit;
-    text-color:       var(primary);
+    text-color: var(primary);
 }}
 error-message {{
     background-color: rgba ( 0, 0, 0, 0 % );
