@@ -2,7 +2,7 @@
 
 killall -r polybar
 
-sleep 5
+sleep 2
 
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
