@@ -5,12 +5,12 @@
 [urgency_low]
     background = "{background}"
     foreground = "{foreground}"
-    timeout = 10
+    timeout = 5
 
 [urgency_normal]
     background = "{background}"
     foreground = "{foreground}"
-    timeout = 10
+    timeout = 60
 
 [urgency_critical]
     background = "#C80000"
@@ -74,6 +74,7 @@
 	appname = "Google Play Music Desktop Player"
 	desktop-entry = "Google Play Music Desktop Player"
 	format = "<b>%s</b>\n<i>%b</i>"
+  urgency = low
 
 [shortcuts]
     # Available modifiers are "ctrl", "mod1", "mod2", "mod3", and "mod4"
