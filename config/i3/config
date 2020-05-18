@@ -178,9 +178,7 @@ bindsym $mod+space exec rofi -show drun -config $HOME/.cache/wal/run.rasi -show-
 bindsym $mod+Control+Left move workspace to output left
 bindsym $mod+Control+Right move workspace to output right
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh > polylog
-# exec_always --no-startup-id albert
-exec /usr/local/bin/premid
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #exec --no-startup-id /opt/nextcloud.AppImage --background
 
@@ -197,5 +195,3 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
 
 exec setxkbmap de # Keyboard layout festlegen
 exec_always --no-startup-id wal -R
-
-exec notify-send "Started!"
