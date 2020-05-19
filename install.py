@@ -53,6 +53,18 @@ files = [
         workDir + 'config/wal/templates/theme.conf',
         home + '.config/wal/templates/theme.conf'
     ],
+    [
+        workDir + 'config/gtk-2.0/settings.ini',
+        home + '.config/gtk-2.0/settings.ini'
+    ],
+    [
+        workDir + 'config/gtk-3.0/settings.ini',
+        home + '.config/gtk-3.0/settings.ini'
+    ],
+    [
+        workDir + 'zshrc',
+        home + '.zshrc'
+    ],
 ]
 
 for file in files:
