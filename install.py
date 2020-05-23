@@ -30,6 +30,10 @@ files = [
         home + '.config/polybar/power_menu.sh'
     ],
     [
+        workDir + 'config/polybar/packages.sh',
+        home + '.config/polybar/packages.sh'
+    ],
+    [
         workDir + 'config/terminator/config',
         home + '.config/terminator/config'
     ],
@@ -40,6 +44,10 @@ files = [
     [
         workDir + 'config/wal/templates/dunstrc',
         home + '.config/wal/templates/dunstrc'
+    ],
+    [
+        home + '.cache/wal/dunstrc',
+        home + '.config/dunst/dunstrc'
     ],
     [
         workDir + 'config/wal/templates/power.rasi',
