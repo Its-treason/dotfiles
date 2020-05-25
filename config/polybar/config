@@ -45,7 +45,7 @@ border-left-size = 10
 radius = 4
 
 padding-left = 0
-padding-right = 5
+padding-right = 3
 
 module-margin-left = 3
 module-margin-right = 3
@@ -56,7 +56,7 @@ font-2 = "MesloLGS NF:pixelsizesize=15:antialias=true;3"
 
 modules-left = i3
 modules-center = calendar
-modules-right = cpu memory packages pulseaudio eth power_btn
+modules-right = cpu memory packages pulseaudio eth
 
 tray-position = right
 tray-padding = 2
