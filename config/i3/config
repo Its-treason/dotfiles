@@ -76,45 +76,50 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-workspace 1 output HDMI-1
-workspace 2 output DVI-D-1
-workspace 3 output DP-1
-workspace 4 output HDMI-1
-workspace 5 output DVI-D-1
-workspace 6 output DP-1
-workspace 7 output HDMI-1
-workspace 8 output DVI-D-1
-workspace 9 output DP-1
-workspace 10 output DP-1
+# Change to your Monitor setup
+set $monitorLeft HDMI-0
+set $monitorMiddle DVI-D-0
+set $monitorRight DP-5
+
+workspace 1 output $monitorLeft
+workspace 2 output $monitorMiddle
+workspace 3 output $monitorRight
+workspace 4 output $monitorLeft
+workspace 5 output $monitorMiddle
+workspace 6 output $monitorRight
+workspace 7 output $monitorLeft
+workspace 8 output $monitorMiddle
+workspace 9 output $monitorRight
+workspace 10 output $monitorRight
 
 # switch to workspace
-bindsym $mod+1 workspace 1 output HDMI-1
-bindsym $mod+2 workspace 2 output DVI-D-1
-bindsym $mod+3 workspace 3 output DP-1
-bindsym $mod+4 workspace 4 output HDMI-1
-bindsym $mod+5 workspace 5 output DVI-D-1
-bindsym $mod+6 workspace 6 output DP-1
-bindsym $mod+7 workspace 7 output HDMI-1
-bindsym $mod+8 workspace 8 output DVI-D-1
-bindsym $mod+9 workspace 9 output DP-1
-bindsym $mod+0 workspace 10 output DP-1
+bindsym $mod+1 workspace 1 output $monitorLeft
+bindsym $mod+2 workspace 2 output $monitorMiddle
+bindsym $mod+3 workspace 3 output $monitorRight
+bindsym $mod+4 workspace 4 output $monitorLeft
+bindsym $mod+5 workspace 5 output $monitorMiddle
+bindsym $mod+6 workspace 6 output $monitorRight
+bindsym $mod+7 workspace 7 output $monitorLeft
+bindsym $mod+8 workspace 8 output $monitorMiddle
+bindsym $mod+9 workspace 9 output $monitorRight
+bindsym $mod+0 workspace 10 output $monitorRight
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1 output HDMI-1
-bindsym $mod+Shift+2 move container to workspace 2 output DVI-D-1
-bindsym $mod+Shift+3 move container to workspace 3 output DP-1
-bindsym $mod+Shift+4 move container to workspace 4 output HDMI-1
-bindsym $mod+Shift+5 move container to workspace 5 output DVI-D-1
-bindsym $mod+Shift+6 move container to workspace 6 output DP-1
-bindsym $mod+Shift+7 move container to workspace 7 output HDMI-1
-bindsym $mod+Shift+8 move container to workspace 8 output DVI-D-1
-bindsym $mod+Shift+9 move container to workspace 9 output DP-1
-bindsym $mod+Shift+0 move container to workspace 10 output DP-1
+bindsym $mod+Shift+1 move container to workspace 1 output $monitorLeft
+bindsym $mod+Shift+2 move container to workspace 2 output $monitorMiddle
+bindsym $mod+Shift+3 move container to workspace 3 output $monitorRight
+bindsym $mod+Shift+4 move container to workspace 4 output $monitorLeft
+bindsym $mod+Shift+5 move container to workspace 5 output $monitorMiddle
+bindsym $mod+Shift+6 move container to workspace 6 output $monitorRight
+bindsym $mod+Shift+7 move container to workspace 7 output $monitorLeft
+bindsym $mod+Shift+8 move container to workspace 8 output $monitorMiddle
+bindsym $mod+Shift+9 move container to workspace 9 output $monitorRight
+bindsym $mod+Shift+0 move container to workspace 10 output $monitorRight
 
 # Set the Workspaces at the Start
-exec i3-msg workspace 1 output HDMI-1
-exec i3-msg workspace 3 output DP-1
-exec i3-msg workspace 2 output DVI-D-1
+exec i3-msg workspace 1 output $monitorLeft
+exec i3-msg workspace 3 output $monitorRight
+exec i3-msg workspace 2 output $monitorMiddle
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -169,6 +174,8 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 
 hide_edge_borders none
 
+popup_during_fullscreen smart
+focus_on_window_activation none
 gaps inner 5
 gaps outer 5
 smart_borders no_gaps
@@ -187,7 +194,7 @@ bindsym $mod+l exec xscreensaver-command -l
 exec_always --no-startup-id xscreensaver -no-splash
 
 # Set Resolution
-exec --no-startup-id xrandr --output DVI-D-1 --mode 1920x1080 --primary  --output DP-1 --mode 1920x1080 --right-of DVI-D-1 --output HDMI-1 --left-of DVI-D-1 --mode 1920x1080
+exec --no-startup-id xrandr --output $monitorMiddle --mode 1920x1080 --primary  --output $monitorRight --mode 1920x1080 --right-of $monitorMiddle --output $monitorLeft --left-of $monitorMiddle --mode 1920x1080
 
 exec_always compton
 
