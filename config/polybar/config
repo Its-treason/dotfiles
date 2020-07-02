@@ -38,11 +38,11 @@ foreground = ${colors.on_surface}
 line-size = 9
 line-color = ${colors.on_surface}
 
-border-top-size = 5
-border-right-size = 10
+border-top-size = 0
+border-right-size = 0
 border-bottom-size = 0
-border-left-size = 10
-radius = 4
+border-left-size = 0
+radius = 0
 
 padding-left = 0
 padding-right = 3
@@ -126,28 +126,13 @@ label-disconnected = "%{T3}%{T-} No Connection"
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <ramp-volume> <label-volume>
-
-ramp-volume-0 = "%{T3}%{T-}"
-
-label-volume = " %percentage%%"
+format-volume = <label-volume>
+label-volume = "%{T3}%{T1} %percentage%%"
 
 # set your standard output. Get all sinks with: 'pactl list short sinks'
 sink = alsa_output.pci-0000_28_00.3.analog-stereo
 
 label-muted = "%{T2}婢%{T-} MUTED"
-label-muted-foreground = #888
-
-[module/power_btn]
-type = custom/text
-
-content = "%{T3}⏻%{T-}"
-content-font = 2
-content-background = ${colors.surface}
-content-foreground = ${colors.on_surface}
-content-padding = 0
-
-click-left = $HOME/.config/polybar/power_menu.sh
 
 [module/calendar]
 type = custom/script
