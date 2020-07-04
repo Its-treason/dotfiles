@@ -32,7 +32,7 @@ offset-y = 0
 fixed-center = true
 enable-ipc = true
 
-background = ${colors.surface}
+background = #1d1d1d
 foreground = ${colors.on_surface}
 
 line-size = 9
@@ -60,7 +60,7 @@ modules-right = cpu memory packages pulseaudio eth
 
 tray-position = right
 tray-padding = 2
-tray-background = ${colors.surface}
+tray-background = #1d1d1d
 tray-radius = 4
 
 wm-restack = i3
@@ -97,6 +97,7 @@ label-mode-padding = 1
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
+label-focused-foreground = ${colors.surface}
 label-focused-background = ${colors.primary}
 label-focused-padding = 2
 
@@ -106,6 +107,7 @@ label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
+label-visible-foreground = ${colors.surface}
 label-visible-background = ${self.label-focused-background}
 label-visible-padding = ${self.label-focused-padding}
 
