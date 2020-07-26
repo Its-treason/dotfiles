@@ -2,9 +2,14 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Merge Xresources
 exec --no-startup-id xrdb -merge ~/.cache/wal/colors.Xresources
 exec --no-startup-id xrdb -merge ~/dotfiles/xscreensaver
 
+# Restore PyWal conf
+exec_always --no-startup-id wal -R
+
+# Set mod key to win key
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -201,4 +206,3 @@ exec_always compton
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
 
 exec setxkbmap de # Keyboard layout festlegen
-exec_always --no-startup-id wal -R

@@ -6,8 +6,8 @@ configuration {{
   bw: 0;
   location: 3;
   padding: 10;
-  yoffset: 36;
-  xoffset: -9;
+  yoffset: 27;
+  xoffset: 0;
   case-sensitive: false;
   cycle: true;
   eh: 1;
@@ -126,7 +126,7 @@ configuration {{
 }}
 
 window {{
-  border-radius: 4px;
+  border-radius: 0;
   padding: 5px 0;
   background-color: @surface;
   border: 0;
@@ -178,7 +178,7 @@ element normal.active {{
 
 element selected.normal {{
   background-color: @primary;
-  text-color: @on-surface;
+  text-color: @surface;
 }}
 
 element selected.urgent {{
