@@ -47,8 +47,8 @@ radius = 0
 padding-left = 0
 padding-right = 3
 
-module-margin-left = 3
-module-margin-right = 3
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = "Ubuntu:size=10:antialias=true;2"
 font-1 = "MesloLGS NF:pixelsize=13:antialias=true;3"
@@ -56,7 +56,7 @@ font-2 = "MesloLGS NF:pixelsizesize=15:antialias=true;3"
 
 modules-left = i3
 modules-center = calendar
-modules-right = cpu memory packages pulseaudio eth
+modules-right = cpu divider memory divider packages divider pulseaudio divider eth
 
 tray-position = right
 tray-padding = 2
@@ -146,6 +146,11 @@ click-left = ~/.config/polybar/cal.sh --popup &
 type = custom/script
 exec = ~/.config/polybar/packages.sh
 interval = 500
+
+[module/divider]
+type = custom/text
+content = %{T2}/%{T-}
+content-foreground = ${colors.primary}
 
 [settings]
 screenchange-reload = true
