@@ -1,0 +1,11 @@
+{
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "Monokai Dimmed",
+
+    "editor.renderWhitespace": "all",
+    "editor.renderFinalNewline": true,
+    "editor.renderControlCharacters": true,
+    "editor.renderIndentGuides": true,
+    "workbench.editor.wrapTabs": true,
+    "editor.rulers": [120]
+}
