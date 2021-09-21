@@ -1,11 +1,20 @@
 {
     "files.autoSave": "afterDelay",
-    "workbench.colorTheme": "Monokai Dimmed",
-
     "editor.renderWhitespace": "all",
     "editor.renderFinalNewline": true,
     "editor.renderControlCharacters": true,
     "editor.renderIndentGuides": true,
     "workbench.editor.wrapTabs": true,
-    "editor.rulers": [120]
+    "editor.rulers": [
+        120
+    ],
+    "explorer.compactFolders": false,
+    "files.eol": "\n",
+    "workbench.tree.indent": 20,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.colorTheme": "Darcula",
+    "editor.tabSize": 2,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "cSpell.language": "en,de-DE,en-GB,en-US,de",
+    "editor.wordWrap": "on"
 }
