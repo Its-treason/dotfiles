@@ -5,7 +5,7 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  -- configure neo tree
+  -- Configure NeoTree
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
@@ -20,13 +20,41 @@ return {
     },
   },
 
-  -- disable bufferline
+  -- Telescope config
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        -- path_display = { "smart" },
+      },
+    },
+    keys = {
+      {
+        "<leader><space>",
+        function()
+          require("telescope.builtin").find_files()
+        end,
+        { desc = "Find files" },
+      },
+      -- TODO: This does nto override the original shortcut, idk why
+      {
+        "gr",
+        function()
+          require("telescope.builtin").lsp_references({ show_line = false })
+        end,
+        desc = "References",
+        remap = true,
+      },
+    },
+  },
+
+  -- Disable Bufferline, who needs tabs?
   {
     "akinsho/bufferline.nvim",
     enabled = false,
   },
 
-  -- add tsserver and setup with typescript.nvim instead of lspconfig
+  -- Add TSServer and setup with typescript.nvim instead of lspconfig
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -39,24 +67,40 @@ return {
         end)
       end,
     },
-    ---@class PluginLspOpts
+  },
+
+  -- Auto GuessIndent
+  {
+    "nmac427/guess-indent.nvim",
+    opts = {},
+  },
+
+  -- Mason nvim
+  {
+    "williamboman/mason.nvim",
     opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- tsserver will be automatically installed with mason and loaded with lspconfig
-        tsserver = {},
-      },
-      -- you can do any additional lsp server setup here
-      -- return true if you don't want this server to be setup with lspconfig
-      ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-      setup = {
-        -- example to setup with typescript.nvim
-        tsserver = function(_, opts)
-          require("typescript").setup({ server = opts })
-          return true
-        end,
-        -- Specify * to use this function as a fallback for any server
-        -- ["*"] = function(server, opts) end,
+      ensure_installed = {
+        -- PHP
+        "phpactor",
+        "phpmd",
+        "phpcs",
+        "phpstan",
+        -- TS / JS
+        "typescript-language-server",
+        -- Ansible
+        "ansible-language-server",
+        "ansible-lint",
+        -- Rust
+        "rust-analyzer",
+        "rustfmt",
+        -- Docker
+        "docker-compose-language-service",
+        "dockerfile-language-server",
+        -- Common
+        "sqlls",
+        "bash-language-server",
+        "marksman", -- Markdown
+        "nginx-language-server",
       },
     },
   },
@@ -79,6 +123,7 @@ return {
         "markdown",
         "markdown_inline",
         "python",
+        "php",
         "query",
         "regex",
         "tsx",
@@ -89,18 +134,32 @@ return {
     },
   },
 
-  -- add jsonls and schemastore ans setup treesitter for json, json5 and jsonc
-  { import = "lazyvim.plugins.extras.lang.json" },
-
-  -- coc
-  {
-    "neoclide/coc.nvim",
-    build = "yarn install && yarn build",
-  },
-
   -- Diffview
   {
     "sindrets/diffview.nvim",
   },
-}
 
+  -- Harpoon
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    keys = {
+      {
+        "<leader>a",
+        function()
+          require("harpoon.mark").add_file()
+        end,
+        desc = "Harpoon add file",
+      },
+      {
+        "<leader>h",
+        function()
+          require("harpoon.ui").toggle_quick_menu()
+        end,
+        desc = "Harpoon open quick menu",
+      },
+    },
+  },
+}
