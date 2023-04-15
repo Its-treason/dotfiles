@@ -8,7 +8,7 @@ set -ex
 echo "Installing core utilities"
 apt update
 
-apt install -y --no-install-recommends curl htop git build-essential python3 python3-venv ca-certificates curl gnupg
+apt install -y --no-install-recommends curl htop git build-essential python3 python3-venv ca-certificates curl gnupg firefox-esr
 
 # Own repository
 echo "Adding packages.its-treason.com repo"
@@ -55,4 +55,5 @@ for ver in "8.0", "8.1", "8.2", "7.0", "7.4"; do
 done
 
 # PhpStorm +(Toolbox)
-
+curl -L https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.27.3.14493.tar.gz -o /tmp/toolbox.tar.gz
+tar -xvf /tmp/toolbox.tar.gz jetbrains-toolbox -C /usr/local/bin/

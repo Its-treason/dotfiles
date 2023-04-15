@@ -1,9 +1,5 @@
 -- every spec file under config.plugins will be loaded automatically by lazy.nvim
---
--- In your plugin files, you can:
--- * add extra plugins
--- * disable/enabled LazyVim plugins
--- * override the configuration of LazyVim plugins
+
 return {
   -- Configure NeoTree
   {
@@ -36,13 +32,13 @@ return {
         end,
         { desc = "Find files" },
       },
-      -- TODO: This does nto override the original shortcut, idk why
+      -- TODO: This does not override the original shortcut, idk why
       {
         "gr",
         function()
           require("telescope.builtin").lsp_references({ show_line = false })
         end,
-        desc = "References",
+        desc = "References (Better)",
         remap = true,
       },
     },
@@ -57,19 +53,24 @@ return {
   -- Add TSServer and setup with typescript.nvim instead of lspconfig
   {
     "neovim/nvim-lspconfig",
+    init = function()
+      vim.keymap.set("n", "gr", function()
+        require("telescope.builtin").lsp_references({ show_line = false })
+      end, { desc = "References" })
+    end,
     dependencies = {
       "jose-elias-alvarez/typescript.nvim",
       init = function()
         require("lazyvim.util").on_attach(function(_, buffer)
-          -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
-          vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
+          vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+          vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { buffer = buffer, desc = "Rename File" })
         end)
       end,
     },
   },
 
   -- Auto GuessIndent
+  -- :GuessIndent Will retry to guess the indent of a file
   {
     "nmac427/guess-indent.nvim",
     opts = {},
@@ -101,6 +102,7 @@ return {
         "bash-language-server",
         "marksman", -- Markdown
         "nginx-language-server",
+        "yaml-language-server",
       },
     },
   },
@@ -130,6 +132,9 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "rust",
+        "dockerfile",
+        "sql",
       },
     },
   },
@@ -137,6 +142,7 @@ return {
   -- Diffview
   {
     "sindrets/diffview.nvim",
+    -- TODO: Shortcuts
   },
 
   -- Harpoon
