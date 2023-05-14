@@ -1,11 +1,15 @@
--- every spec file under config.plugins will be loaded automatically by lazy.nvim
-
 return {
   -- Configure NeoTree
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       close_if_last_window = true,
+      sync_root_with_cwd = true,
+      respect_buf_cwd = true,
+      update_focued_file = {
+        enabled = true,
+        update_root = true,
+      },
       filesystem = {
         follow_current_file = true,
         filtered_items = {
@@ -98,6 +102,7 @@ return {
         "docker-compose-language-service",
         "dockerfile-language-server",
         -- Common
+        "tree-sitter-cli",
         "sqlls",
         "bash-language-server",
         "marksman", -- Markdown
@@ -142,7 +147,25 @@ return {
   -- Diffview
   {
     "sindrets/diffview.nvim",
-    -- TODO: Shortcuts
+    cmd = {
+      "DiffviewOpen",
+      "DiffviewClose",
+      "DiffviewFocusFiles",
+      "DiffviewRefresh",
+      "DiffviewFileHistory",
+    },
+    keys = {
+      {
+        "<leader>gd",
+        "<cmd>DiffviewFileHistory %<cr>",
+        desc = "History of current file",
+      },
+      {
+        "<leader>gH",
+        "<cmd>DiffviewFileHistory<cr>",
+        desc = "Git history",
+      },
+    },
   },
 
   -- Harpoon
@@ -165,6 +188,34 @@ return {
           require("harpoon.ui").toggle_quick_menu()
         end,
         desc = "Harpoon open quick menu",
+      },
+    },
+  },
+
+  -- Project.nvim
+  {
+    "ahmedkhalf/project.nvim",
+    lazy = false,
+    init = function()
+      local telescope = require("telescope")
+      telescope.load_extension("projects")
+    end,
+    config = function()
+      require("project_nvim").setup({
+        detection_methods = { "pattern" },
+        pattern = { ".git", "Makefile", "package.json" },
+      })
+    end,
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      event = "Bufenter",
+      cmd = { "Telescope" },
+    },
+    keys = {
+      {
+        "<leader>o",
+        "<cmd>Telescope projects<cr>",
+        "Open last projects",
       },
     },
   },
