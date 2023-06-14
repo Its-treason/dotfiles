@@ -1,6 +1,6 @@
 return {
   -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  { "ellisonleao/gruvbox.nvim", priority = 1000 },
 
   {
     "folke/tokyonight.nvim",

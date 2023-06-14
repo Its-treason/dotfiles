@@ -72,9 +72,13 @@ let-env PATH = (
     append '~/.config/composer/vendor/bin/' |
     append '~/.nvm/versions/node/v16.14.0/bin/' |
     append '~/.yarn/bin' |
+    append '~/.cargo/bin' |
     append '~/.spicetify/' |
     append '~/.local/share/nvim/mason/bin/' |
     # This will remove all Windows executables from WSL2
     filter { |it| $it | str starts-with '/mnt/c' | $in != true }
 )
+
+let-env DEBEMAIL = "packages@its-treason.com"
+let-env DEBFULLNAME = "Its Treason"
 

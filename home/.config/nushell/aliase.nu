@@ -1,5 +1,6 @@
 alias docker-composer = docker compose
 
+alias dc = docker compose
 alias dcd = docker compose -f docker-compose.development.yml
 alias dcp = docker compose -f docker-compose.production.yml
 alias dcq = docker compose -f docker-compose.qa.yml

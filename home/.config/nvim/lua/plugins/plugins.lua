@@ -1,16 +1,31 @@
 return {
+  -- Disbale some stuff
+  -- Disable Bufferline, who needs tabs?
+  {
+    "akinsho/bufferline.nvim",
+    enabled = false,
+  },
+  {
+    "ggandor/leap.nvim",
+    enabled = false,
+  },
+  {
+    "ggandor/flit.nvim",
+    enabled = false,
+  },
+  {
+    "folke/persistence.nvim",
+    enabled = false,
+  },
+
   -- Configure NeoTree
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       close_if_last_window = true,
-      sync_root_with_cwd = true,
-      respect_buf_cwd = true,
-      update_focued_file = {
-        enabled = true,
-        update_root = true,
-      },
       filesystem = {
+        bind_to_cwd = true,
+        cwd_target = { sidebar = "windows" },
         follow_current_file = true,
         filtered_items = {
           visible = true,
@@ -36,32 +51,12 @@ return {
         end,
         { desc = "Find files" },
       },
-      -- TODO: This does not override the original shortcut, idk why
-      {
-        "gr",
-        function()
-          require("telescope.builtin").lsp_references({ show_line = false })
-        end,
-        desc = "References (Better)",
-        remap = true,
-      },
     },
-  },
-
-  -- Disable Bufferline, who needs tabs?
-  {
-    "akinsho/bufferline.nvim",
-    enabled = false,
   },
 
   -- Add TSServer and setup with typescript.nvim instead of lspconfig
   {
     "neovim/nvim-lspconfig",
-    init = function()
-      vim.keymap.set("n", "gr", function()
-        require("telescope.builtin").lsp_references({ show_line = false })
-      end, { desc = "References" })
-    end,
     dependencies = {
       "jose-elias-alvarez/typescript.nvim",
       init = function()
@@ -69,7 +64,24 @@ return {
           vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
           vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { buffer = buffer, desc = "Rename File" })
         end)
+
+        local keys = require("lazyvim.plugins.lsp.keymaps").get()
+        keys[#keys + 1] = {
+          "gr",
+          function()
+            require("telescope.builtin").lsp_references({ show_line = false });
+          end,
+          desc = "References",
+        };
       end,
+    },
+    opts = {
+      autoformat = false,
+      servers = {
+        tsserver = {
+          
+        }
+      }
     },
   },
 
@@ -77,7 +89,7 @@ return {
   -- :GuessIndent Will retry to guess the indent of a file
   {
     "nmac427/guess-indent.nvim",
-    opts = {},
+    event = "BufEnter",
   },
 
   -- Mason nvim
@@ -111,10 +123,6 @@ return {
       },
     },
   },
-
-  -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
-  -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
-  { import = "lazyvim.plugins.extras.lang.typescript" },
 
   -- add more treesitter parsers
   {
@@ -204,6 +212,7 @@ return {
       require("project_nvim").setup({
         detection_methods = { "pattern" },
         pattern = { ".git", "Makefile", "package.json" },
+        scope_dir = "win",
       })
     end,
     dependencies = {
