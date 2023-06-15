@@ -3,7 +3,7 @@
 echo "This script will collect all local dotfiles and copy them here."
 echo "Existing files will be overriden! Waiting 10 seconds..."
 echo ""
-sleep 10sec
+#sleep 10sec
 
 cd home
 
@@ -17,13 +17,13 @@ $dirs | each { |$dir|
 }
 
 # Collect all files and copy them from the local config dir into here
-let files = (glob -D ** | str substring $"(($env.PWD | str length) + 1)," | skip 1)
+let files = (glob -D ** | each { $in | str substring (($env.PWD | str length) + 1)..($in | str length) } | skip 1)
 $files | each { |$file|
   if ($"($env.HOME)/($file)" | path exists) {
-    echo $"cp ($env.HOME)/($file) ($env.PWD)/($file)"
-    cp $"($env.HOME)/($file)" $"($env.PWD)/($file)"
+    echo $"cp ($env.HOME)/($file) ($env.PWD)/($file)";
+    cp $"($env.HOME)/($file)" $"($env.PWD)/($file)";
   } else {
-    echo $"Skipping: ($env.HOME)/($file) becuase it was deleted"
+    echo $"Skipping: ($env.HOME)/($file) becuase it was deleted";
   }
 }
 

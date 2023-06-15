@@ -1,6 +1,12 @@
 return {
   -- add gruvbox
-  { "ellisonleao/gruvbox.nvim", priority = 1000 },
+  {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    opts = {
+      contrast = "hard",
+    }
+  },
 
   {
     "folke/tokyonight.nvim",
