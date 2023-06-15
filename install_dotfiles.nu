@@ -8,7 +8,7 @@ sleep 10sec
 cd home
 
 # First create all config directories
-let dirs = (glob -F ** | str substring $"(($env.PWD | str length) + 1)," | skip 1)
+let dirs = (glob -F ** | each { $in | str substring (($env.PWD | str length) + 1)..($in | str length) } | skip 1)
 
 $dirs | each { |$dir|
   echo $"mkdir ($env.HOME)/($dir)"
@@ -16,8 +16,7 @@ $dirs | each { |$dir|
 }
 
 # Collect all files and copy them to the right destination
-let files = (glob -D ** | str substring $"(($env.PWD | str length) + 1)," | skip 1)
-
+let files = (glob -D ** | each { $in | str substring (($env.PWD | str length) + 1)..($in | str length) } | skip 1)
 $files | each { |$file|
   echo $"cp ($env.PWD)/($file) ($env.HOME)/($file)"
   cp $"($env.PWD)/($file)" $"($env.HOME)/($file)"

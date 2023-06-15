@@ -4,7 +4,3 @@ language_server_phpstan.enabled: true
 language_server_phpstan.bin: "~/.local/share/nvim/mason/bin/phpstan"
 language_server_phpstan.level: 1
 
-language_server_psalm.enabled: true
-language_server_psalm.bin: "~/.local/share/nvim/mason/bin/psalm"
-language_server_psalm.error_level: 7
-

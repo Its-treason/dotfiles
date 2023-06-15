@@ -3,7 +3,7 @@
 echo "This script will collect all local dotfiles and copy them here."
 echo "Existing files will be overriden! Waiting 10 seconds..."
 echo ""
-#sleep 10sec
+sleep 10sec
 
 cd home
 
