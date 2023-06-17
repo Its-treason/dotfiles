@@ -1,9 +1,9 @@
 #!/usr/bin/env nu
 
-echo "This script will collect all local dotfiles and copy them here."
-echo "Existing files will be overriden! Waiting 10 seconds..."
-echo ""
-sleep 10sec
+print "This script will collect all local dotfiles and copy them here."
+print "Existing files will be overriden! Waiting 5 seconds..."
+print ""
+sleep 5sec
 
 cd home
 
@@ -12,18 +12,22 @@ let dirs = [
   ".config/nvim"
 ];
 $dirs | each { |$dir|
-  echo $"cp -r ($env.HOME)/($dir)/* ($env.PWD)/($dir)"
+  print $"cp -r ($env.HOME)/($dir)/* ($env.PWD)/($dir)"
   cp -r $"($env.HOME)/($dir)/*" $"($env.PWD)/($dir)"
 }
 
 # Collect all files and copy them from the local config dir into here
 let files = (glob -D ** | each { $in | str substring (($env.PWD | str length) + 1)..($in | str length) } | skip 1)
 $files | each { |$file|
+  if ($file | str contains ".git") {
+    continue;
+  }
+
   if ($"($env.HOME)/($file)" | path exists) {
-    echo $"cp ($env.HOME)/($file) ($env.PWD)/($file)";
+    print $"cp ($env.HOME)/($file) ($env.PWD)/($file)";
     cp $"($env.HOME)/($file)" $"($env.PWD)/($file)";
   } else {
-    echo $"Skipping: ($env.HOME)/($file) becuase it was deleted";
+    print $"Skipping: ($env.HOME)/($file) becuase it was deleted";
   }
 }
 

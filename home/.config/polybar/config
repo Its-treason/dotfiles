@@ -102,13 +102,13 @@ wrapping-scroll = false
 pin-workspaces = true
 
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-background = ${colors.green}
 label-mode-padding = 1
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-foreground = ${colors.surface}
-label-focused-background = ${colors.orange}
+label-focused-background = ${colors.green}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -217,7 +217,7 @@ ramp-4 = %{T4}%{T-}
 [module/divider]
 type = custom/text
 content = %{T3}/%{T-}
-content-foreground = ${colors.primary}
+content-foreground = ${colors.yellow}
 
 [settings]
 screenchange-reload = true

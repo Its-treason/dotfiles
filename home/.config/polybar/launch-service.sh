@@ -18,8 +18,7 @@ do
   # Then the remove the 0.0.0.0
   # Remove everything behind the port
   # And filter out anything left that is not a number
-  port=$(echo $line | cut -d" " -f2 | cut -d":" -f2 | cut -d"-" -f1 | grep -Po "\d*")
-
+  port=$(echo "$line" | cut -d" " -f2 | cut -d":" -f2 | cut -d"-" -f1 | grep -Po "\d*")
   if [ "$port" == "" ]; then
     continue
   fi
@@ -30,7 +29,7 @@ done
 # Remove trailing line break
 options=$(echo "$options" | tr -d '\n')
 
-theme=${1:-$HOME/.cache/wal/run.rasi}
+theme=${1:-$HOME/.config/rofi/run.rasi}
 selection=$(echo -e "${options}" | rofi -p "" -dmenu -i -config "$theme")
 if [ "$selection" == "" ]; then
   exit
