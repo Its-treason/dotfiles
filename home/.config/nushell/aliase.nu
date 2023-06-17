@@ -1,13 +1,12 @@
-alias docker-composer = docker compose
+# Docker
+alias docker-compose = docker compose
 
-alias dc = docker compose
 alias dcd = docker compose -f docker-compose.development.yml
 alias dcp = docker compose -f docker-compose.production.yml
 alias dcq = docker compose -f docker-compose.qa.yml
 
+# PHPUnit Coverage
 alias cov = google-chrome build/coverage/index.html
-
-alias ll = ls -la
 
 # Git
 alias gco = git checkout 
@@ -27,3 +26,8 @@ def gcp [] {
   let message = (input $"Commit message \(Using Prefix \"($prefix):\"): ");
   git commit -m $"($prefix): ($message)";
 }
+
+# Others
+alias ll = ls -la
+
+alias j = just

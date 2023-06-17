@@ -17,11 +17,20 @@
 ;==========================================================
 
 [colors]
-surface = ${xrdb:background}
-on_surface = ${xrdb:foreground}
-primary = ${xrdb:color1}
+surface = #1d2021
+on_surface = #fbf1c7
 
-alert = #FF0000
+red = "#fb4934"
+green = "#b8bb26"
+yellow = "#fabd2f"
+blue = "#83a598"
+purple = "#d3869b"
+aqua = "#8ec07c"
+gray = "#ebdbb2"
+orange = "#fe8019"
+
+primary = ${self.blue}
+alert = ${self.red}
 
 [bar/bar1]
 monitor = ${env:MONITOR}
@@ -32,7 +41,7 @@ offset-y = 0
 fixed-center = true
 enable-ipc = true
 
-background = #1d1d1d
+background = ${colors.surface}
 foreground = ${colors.on_surface}
 
 line-size = 9
@@ -51,12 +60,13 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = "Ubuntu:size=10:antialias=true;2"
-font-1 = "MesloLGS NF:pixelsize=13:antialias=true;3"
+font-1 = "MesloLGS NF:pixelsize=10:antialias=true;3"
 font-2 = "MesloLGS NF:pixelsizesize=15:antialias=true;3"
+font-3 = "MesloLGS NF:pixelsize=8:antialias=true;2"
 
 modules-left = i3
 modules-center = calendar
-modules-right = cpu divider memory divider packages divider pulseaudio divider eth
+modules-right = temp divider battery divider cpu divider memory divider packages divider pulseaudio divider wireless divider eth
 
 tray-position = right
 tray-padding = 2
@@ -98,7 +108,7 @@ label-mode-padding = 1
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-foreground = ${colors.surface}
-label-focused-background = ${colors.primary}
+label-focused-background = ${colors.orange}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -118,12 +128,22 @@ label-urgent-padding = 2
 
 [module/eth]
 type = internal/network
-interface = enp35s0
+interface = lo
 
 format-connected-prefix-foreground = ${colors.on_surface}
 label-connected = "%{T3}%{T-} %local_ip%"
 
 label-disconnected = "%{T3}%{T-} No Connection"
+
+[module/wireless]
+type = internal/network
+interface = wlp0s20f3
+
+format-connected = <label-connected>
+label-connected = %{T3}直%{T-} %local_ip%
+
+format-disconnected = <label-disconnected>
+label-disconnected = %{T3}睊%{T-} No Connection
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -147,9 +167,56 @@ type = custom/script
 exec = ~/.config/polybar/packages.sh
 interval = 500
 
+[module/battery]
+type = internal/battery 
+full-at = 99
+battery = BAT0
+adapter = AC
+poll-interwal = 20
+
+format-charging = <ramp-capacity> <label-charging>
+label-charging = "%{T4}%{T-} %percentage%%"
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+
+ramp-capacity-0 = %{T4}%{T-}
+ramp-capacity-1 = %{T4}%{T-}
+ramp-capacity-2 = %{T4}%{T-}
+ramp-capacity-3 = %{T4}%{T-}
+ramp-capacity-4 = %{T4}%{T-}
+ramp-capacity-5 = %{T4}%{T-}
+ramp-capacity-6 = %{T4}%{T-}
+ramp-capacity-7 = %{T4}%{T-}
+ramp-capacity-8 = %{T4}%{T-}
+ramp-capacity-9 = %{T4}%{T-}
+
+[module/temp]
+type = internal/temperature
+interval = 10
+thermal-zone = 2
+hwon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp2_input
+
+base-temperature = 40
+warn-temperature = 70
+
+units = true
+
+format = <ramp> <label>
+label = %temperature-c%
+
+format-warn = <ramp> <label-warn>
+label-warn = %{T3}%{T-} %temperature-c%
+
+ramp-0 = %{T4}%{T-}
+ramp-1 = %{T4}%{T-}
+ramp-2 = %{T4}%{T-}
+ramp-3 = %{T4}%{T-}
+ramp-4 = %{T4}%{T-}
+
 [module/divider]
 type = custom/text
-content = %{T2}/%{T-}
+content = %{T3}/%{T-}
 content-foreground = ${colors.primary}
 
 [settings]

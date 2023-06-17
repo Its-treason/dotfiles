@@ -2,30 +2,12 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# Merge Xresources
-exec --no-startup-id xrdb -merge ~/.cache/wal/colors.Xresources
-exec --no-startup-id xrdb -merge ~/dotfiles/xscreensaver
-
-# Restore PyWal conf
-exec_always --no-startup-id wal -R
-
 # Set mod key to win key
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Roboto Regular 8
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -36,12 +18,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec albert show
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.s
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# start rofi (a program launcher, dmenu like)
+bindsym $mod+d exec rofi -show drun -config $HOME/.config/rofi/run.rasi -show-icons -icon-theme Yaru
 
 # change focus
 bindsym $mod+Left focus left
@@ -49,7 +27,19 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+# change focus, but with VIM curser keys
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
 # move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Move focused window, but with VIM curser keys
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -57,7 +47,6 @@ bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
-
 # split in vertical orientation
 bindsym $mod+v split v
 
@@ -73,58 +62,45 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
-
-# Change to your Monitor setup
-set $monitorLeft HDMI-0
-set $monitorMiddle DVI-D-0
-set $monitorRight DP-5
-
-workspace 1 output $monitorLeft
-workspace 2 output $monitorMiddle
-workspace 3 output $monitorRight
-workspace 4 output $monitorLeft
-workspace 5 output $monitorMiddle
-workspace 6 output $monitorRight
-workspace 7 output $monitorLeft
-workspace 8 output $monitorMiddle
-workspace 9 output $monitorRight
-workspace 10 output $monitorRight
+bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1 output $monitorLeft
-bindsym $mod+2 workspace 2 output $monitorMiddle
-bindsym $mod+3 workspace 3 output $monitorRight
-bindsym $mod+4 workspace 4 output $monitorLeft
-bindsym $mod+5 workspace 5 output $monitorMiddle
-bindsym $mod+6 workspace 6 output $monitorRight
-bindsym $mod+7 workspace 7 output $monitorLeft
-bindsym $mod+8 workspace 8 output $monitorMiddle
-bindsym $mod+9 workspace 9 output $monitorRight
-bindsym $mod+0 workspace 10 output $monitorRight
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1 output $monitorLeft
-bindsym $mod+Shift+2 move container to workspace 2 output $monitorMiddle
-bindsym $mod+Shift+3 move container to workspace 3 output $monitorRight
-bindsym $mod+Shift+4 move container to workspace 4 output $monitorLeft
-bindsym $mod+Shift+5 move container to workspace 5 output $monitorMiddle
-bindsym $mod+Shift+6 move container to workspace 6 output $monitorRight
-bindsym $mod+Shift+7 move container to workspace 7 output $monitorLeft
-bindsym $mod+Shift+8 move container to workspace 8 output $monitorMiddle
-bindsym $mod+Shift+9 move container to workspace 9 output $monitorRight
-bindsym $mod+Shift+0 move container to workspace 10 output $monitorRight
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
-# Set the Workspaces at the Start
-exec i3-msg workspace 1 output $monitorLeft
-exec i3-msg workspace 3 output $monitorRight
-exec i3-msg workspace 2 output $monitorMiddle
+# Move Workspaces
+bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+Right move workspace to output right
+
+# same but with vim shortcuts
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+l move workspace to output right
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -135,34 +111,32 @@ bindsym $mod+Shift+e exec $HOME/.config/polybar/power_menu.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+    # Bindings for changing windows size
+    bindsym l resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym h resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-set_from_resource $fg     i3wm.foreground
-set_from_resource $bg     i3wm.background
-set_from_resource $prim   i3wm.color5
-set_from_resource $warn   #EE0000
+# Color settings
+set $fg     #1d2021
+set $bg     #fbf1c7
+set $prim   #83a598
+set $warn   #fb4934
 
 # class                 border  backgr. text indicator child_border
 client.focused          $prim   $bg     $fg  $prim     $prim
@@ -173,36 +147,37 @@ client.placeholder      $warn   $bg     $fg  $warn     $warn
 
 client.background       $bg
 
-for_window [class="^.*"] border pixel 3
-for_window [class="albert"] border pixel 0
+# Give all windows a border
+for_window [class="^.*"] border pixel 2
+# Force the calander to auto float. Calander is started by polybar when pressing the time
 for_window [class="Yad" title="yad-calendar"] floating enable
 
+# Enable gaps
+#gaps inner 5px
+
+# Dont hide any border
 hide_edge_borders none
 
+# Only show popups / new floating windows when there belong to the currently focused app
 popup_during_fullscreen smart
-focus_on_window_activation none
-gaps inner 5
-gaps outer 5
-smart_borders no_gaps
+# Don't auto focus windows, just mark them as urgent
+focus_on_window_activation urgent
 
-# bindsym $mod+space exec albert show
-bindsym $mod+space exec rofi -show drun -config $HOME/.cache/wal/run.rasi -show-icons -icon-theme Yaru
-bindsym $mod+Control+Left move workspace to output left
-bindsym $mod+Control+Right move workspace to output right
+# Open the Browser with a docker services open port
+bindsym $mod+shift+d exec $HOME/.config/polybar/launch-service.sh
 
+# Screenshot, shortcut is the same as windows one
+bindsym $mod+shift+s exec gnome-screenshot -ai
+
+# Start poly using startup script, this will restart polybar when i3 restarts
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-#exec --no-startup-id /opt/nextcloud.AppImage --background
-
 # Lock screen
-bindsym $mod+l exec xscreensaver-command -l
-exec_always --no-startup-id xscreensaver -no-splash
+bindsym $mod+Shift+l exec i3lock -f -c 282828
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --no-fork -f -c 282828
 
-# Set Resolution
-exec --no-startup-id xrandr --output $monitorMiddle --mode 1920x1080 --primary  --output $monitorRight --mode 1920x1080 --right-of $monitorMiddle --output $monitorLeft --left-of $monitorMiddle --mode 1920x1080
-
-exec_always compton
-
+# Start gnome-keyring-daemon, used for ssh or something,
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
 
-exec setxkbmap de # Keyboard layout festlegen
+# Set keyboard layout to german
+exec --no-startup-id setxkbmap de

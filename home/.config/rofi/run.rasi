@@ -1,3 +1,5 @@
+@import "config";
+
 configuration {{
 	modi: "run";
 	width: 30;
@@ -144,39 +146,6 @@ configuration {{
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }}
 
-* {{
-    surface: {background};
-    on-surface: {foreground};
-    primary: {color1};
-    red:                         rgba ( 220, 50, 47, 100 % );
-    selected-active-foreground:  @background;
-    lightfg:                     rgba ( 88, 104, 117, 100 % );
-    separatorcolor:              @primary;
-    urgent-foreground:           @red;
-    alternate-urgent-background: @lightbg;
-    lightbg:                     @background;
-    spacing:                     2;
-    border-color:                @foreground;
-    normal-background:           @background;
-    background-color:            rgba ( 0, 0, 0, 0 % );
-    alternate-active-background: @lightbg;
-    active-foreground:           @blue;
-    blue:                        rgba ( 38, 139, 210, 100 % );
-    urgent-background:           @background;
-    alternate-normal-foreground: @foreground;
-    selected-active-background:  @blue;
-    background:                  {background};
-    selected-normal-foreground:  @lightbg;
-    active-background:           @background;
-    alternate-active-foreground: @blue;
-    alternate-normal-background: @lightbg;
-    foreground:                  {foreground};
-    selected-urgent-background:  @red;
-    selected-urgent-foreground:  @background;
-    normal-foreground:           @foreground;
-    alternate-urgent-foreground: @red;
-    selected-normal-background:  @lightfg;
-}}
 window {{
     padding:          15px 5px;
     background-color: @background;

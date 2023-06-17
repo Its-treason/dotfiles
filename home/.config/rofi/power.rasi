@@ -1,3 +1,5 @@
+@import "config";
+
 configuration {{
   width: 10;
   lines: 4;
@@ -90,39 +92,6 @@ configuration {{
   /*	me-select-entry: "MousePrimary";*/
   /*	me-accept-entry: "MouseDPrimary";*/
   /*	me-accept-custom: "Control+MouseDPrimary";*/
-}}
-
-* {{
-  surface: {background};
-  on-surface: {foreground};
-  primary: {color1};
-  red: rgba (220, 50, 47, 100 %);
-  selected-active-foreground: @background;
-  separatorcolor: rgba (233, 84, 32, 100 %);
-  urgent-foreground: @red;
-  alternate-urgent-background: @lightbg;
-  lightbg: rgba (238, 232, 213, 100 %);
-  spacing: 2;
-  border-color: rgba (0, 0, 0, 0 %);
-  normal-background: rgba (43, 41, 41, 100 %);
-  background-color: rgba (0, 0, 0, 0 %);
-  alternate-active-background: @lightbg;
-  active-foreground: @blue;
-  blue: rgba (38, 139, 210, 100 %);
-  urgent-background: @background;
-  alternate-normal-foreground: @foreground;
-  selected-active-background: @blue;
-  background: rgba (43, 41, 41, 100 %);
-  selected-normal-foreground: rgba (247, 247, 247, 100 %);
-  active-background: @background;
-  alternate-active-foreground: @blue;
-  alternate-normal-background: rgba (0, 0, 0, 0 %);
-  foreground: rgba (247, 247, 247, 100 %);
-  selected-urgent-background: @red;
-  selected-urgent-foreground: @background;
-  normal-foreground: @foreground;
-  alternate-urgent-foreground: @red;
-  selected-normal-background: rgba (233, 84, 32, 100 %);
 }}
 
 window {{
