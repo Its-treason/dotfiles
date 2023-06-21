@@ -75,7 +75,7 @@ let-env PATH = (
     append '~/.cargo/bin' |
     append '~/.spicetify/' |
     append '~/.local/share/nvim/mason/bin/' |
-    append '~/.bun/bin/'
+    append '~/.bun/bin/' |
     # This will remove all Windows executables from WSL2
     filter { |it| $it | str starts-with '/mnt/c' | $in != true }
 )

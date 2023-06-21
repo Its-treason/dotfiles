@@ -13,6 +13,7 @@ font pango:Roboto Regular 8
 floating_modifier $mod
 
 # start a terminal
+# Use "update-alternatives --config x-terminal-emulator" change the terminal emulator
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
