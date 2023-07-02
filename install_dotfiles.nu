@@ -1,5 +1,10 @@
 #!/usr/bin/env nu
 
+def has-diff [file1, file2] {
+  diff -q $"($file1)" $"($file2)";
+  return ($env.LAST_EXIT_CODE != 0);
+}
+
 print "This script will install all dotfiles."
 print "Existing files will be overriden! Waiting 5 seconds..."
 print ""
@@ -18,6 +23,11 @@ $dirs | each { |$dir|
 let files = (glob -D ** | each { $in | str substring (($env.PWD | str length) + 1)..($in | str length) } | skip 1)
 $files | each { |$file|
   if ($file | str contains ".git") {
+    continue;
+  }
+
+  if ((has-diff $"($env.PWD)/($file)" $"($env.HOME)/($file)") == false) {
+    print $"Skipping: ($env.PWD)/($file)";
     continue;
   }
 

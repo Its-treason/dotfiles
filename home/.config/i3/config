@@ -104,7 +104,7 @@ bindsym $mod+Control+l move workspace to output right
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+# exit i3
 bindsym $mod+Shift+e exec $HOME/.config/polybar/power_menu.sh
 
 # resize window (you can also use the mouse for that)
@@ -172,7 +172,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Lock screen
 bindsym Control+Shift+l exec i3lock -f -c 282828
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --no-fork -f -c 282828
+# Lock after 600 seconds
+exec --no-startup-id xset s 600
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -f -c 282828
 
 # Start gnome-keyring-daemon, used for ssh or something,
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
