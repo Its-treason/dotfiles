@@ -1,14 +1,14 @@
 [frame]
     width = 0
-    color = "{color1}"
+    color = "#fbf1c7"
 
 [urgency_low]
-    background = "#1d2021"
+    background = "#32302f"
     foreground = "#fbf1c7"
     timeout = 5
 
 [urgency_normal]
-    background = "#1d2021"
+    background = "#32302f"
     foreground = "#fbf1c7"
     timeout = 60
 
@@ -25,7 +25,7 @@
     #   %i  iconname (including its path)
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
-    format = "%a\n<b>%s</b>\n%b\n%p"
+    format = "%a\n<b>%s</b>\n%b\n"
 
     # The geometry of the window. Format: [width]xheight[+/-x+/-y]
     # The height = number of notifications, all other variables are px
@@ -64,7 +64,9 @@
     history_length = 20         # Maximum amount of notifications kept in history
     corner_radius = 0
 
-    icon_folders = /usr/share/icons/Adwaita/16x16
+    #icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/legacy/
+    icon_theme = Adwaita
+    enable_recursive_icon_lookup = true
     max_icon_size = 80
     startup_notification = false
     dmenu = /usr/bin/dmenu -p dunst:
@@ -85,3 +87,10 @@
 
     # Context menu
     # context = Mod4+Tab
+
+# Rules refence: https://github.com/dunst-project/dunst/wiki/Guides#understanding-rules
+[pings_are_urgent]
+    appname = Ferdium
+    body = "*timon*"
+    urgency = critical
+    background = "#fb4934"
