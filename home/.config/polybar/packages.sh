@@ -10,4 +10,4 @@ if [ $UPDATE -ne 0 ]; then
   STRING="$STRING %{T3}%{T0} $UPDATE"
 fi
 
-echo $STRING
+echo "$STRING"

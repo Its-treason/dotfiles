@@ -1,20 +1,20 @@
 [frame]
     width = 0
-    color = "{color1}"
+    color = "#fbf1c7"
 
 [urgency_low]
-    background = "{background}"
-    foreground = "{foreground}"
+    background = "#32302f"
+    foreground = "#fbf1c7"
     timeout = 5
 
 [urgency_normal]
-    background = "{background}"
-    foreground = "{foreground}"
+    background = "#32302f"
+    foreground = "#fbf1c7"
     timeout = 60
 
 [urgency_critical]
-    background = "#C80000"
-    foreground = "#F7F7F7"
+    background = "#fb4934"
+    foreground = "#fbf1c7"
     timeout = 0
 
 [global]
@@ -25,7 +25,7 @@
     #   %i  iconname (including its path)
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
-    format = "%a\n<b>%s</b>\n%b\n%p"
+    format = "%a\n<b>%s</b>\n%b\n"
 
     # The geometry of the window. Format: [width]xheight[+/-x+/-y]
     # The height = number of notifications, all other variables are px
@@ -62,19 +62,15 @@
     idle_threshold = 120        # Don't remove messages if the user is idle (no mouse or keyboard input) for longer than idle_threshold seconds
     sticky_history = yes        # Make notifications remain until clicked on (yes) or timeout as normal (no) when recalled from history
     history_length = 20         # Maximum amount of notifications kept in history
-    corner_radius = 4
+    corner_radius = 0
 
-    icon_folders = /usr/share/icons/Yaru/16x16
+    #icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/legacy/
+    icon_theme = Adwaita
+    enable_recursive_icon_lookup = true
     max_icon_size = 80
     startup_notification = false
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/firefox -new-tab
-
-[gpmdp]
-	appname = "Google Play Music Desktop Player"
-	desktop-entry = "Google Play Music Desktop Player"
-	format = "<b>%s</b>\n<i>%b</i>"
-  urgency = low
 
 [shortcuts]
     # Available modifiers are "ctrl", "mod1", "mod2", "mod3", and "mod4"
@@ -91,3 +87,10 @@
 
     # Context menu
     # context = Mod4+Tab
+
+# Rules refence: https://github.com/dunst-project/dunst/wiki/Guides#understanding-rules
+[pings_are_urgent]
+    appname = Ferdium
+    body = "*timon*"
+    urgency = critical
+    background = "#fb4934"

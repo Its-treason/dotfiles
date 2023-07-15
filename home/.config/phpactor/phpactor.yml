@@ -1,0 +1,5 @@
+---
+## Extra tools
+language_server_phpstan.enabled: true
+language_server_phpstan.bin: "~/.local/share/nvim/mason/bin/phpstan"
+language_server_phpstan.level: 1

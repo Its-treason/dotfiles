@@ -1,4 +1,4 @@
-configuration {{
+configuration {
   width: 10;
   lines: 4;
   columns: 1;
@@ -90,167 +90,181 @@ configuration {{
   /*	me-select-entry: "MousePrimary";*/
   /*	me-accept-entry: "MouseDPrimary";*/
   /*	me-accept-custom: "Control+MouseDPrimary";*/
-}}
+}
 
-* {{
-  surface: {background};
-  on-surface: {foreground};
-  primary: {color1};
-  red: rgba (220, 50, 47, 100 %);
-  selected-active-foreground: @background;
-  separatorcolor: rgba (233, 84, 32, 100 %);
-  urgent-foreground: @red;
-  alternate-urgent-background: @lightbg;
-  lightbg: rgba (238, 232, 213, 100 %);
-  spacing: 2;
-  border-color: rgba (0, 0, 0, 0 %);
-  normal-background: rgba (43, 41, 41, 100 %);
-  background-color: rgba (0, 0, 0, 0 %);
-  alternate-active-background: @lightbg;
-  active-foreground: @blue;
-  blue: rgba (38, 139, 210, 100 %);
-  urgent-background: @background;
-  alternate-normal-foreground: @foreground;
-  selected-active-background: @blue;
-  background: rgba (43, 41, 41, 100 %);
-  selected-normal-foreground: rgba (247, 247, 247, 100 %);
-  active-background: @background;
-  alternate-active-foreground: @blue;
-  alternate-normal-background: rgba (0, 0, 0, 0 %);
-  foreground: rgba (247, 247, 247, 100 %);
-  selected-urgent-background: @red;
-  selected-urgent-foreground: @background;
-  normal-foreground: @foreground;
-  alternate-urgent-foreground: @red;
-  selected-normal-background: rgba (233, 84, 32, 100 %);
-}}
+* {
+    // Base Colors
+    bg: #1d2021;
+    bg-alt: #282828;
 
-window {{
+    fg: #fbf1c7;
+
+    red: #fb4934;
+    green: #b8bb26;
+    yellow: #fabd2f;
+    blue: #83a598;
+    purple: #d3869b;
+    aqua: #8ec07c;
+    gray: #ebdbb2;
+    orange: #fe8019;
+
+    surface:   @bg;
+    on-surface: @fg;
+    primary: @orange;
+    selected-active-foreground:  @background;
+    lightfg:                     @green;
+    separatorcolor:              @primary;
+    urgent-foreground:           @red;
+    alternate-urgent-background: @lightbg;
+    lightbg:                     @background;
+    spacing:                     2;
+    border-color:                @foreground;
+    normal-background:           @background;
+    background-color:            @bg;
+    alternate-active-background: @lightbg;
+    active-foreground:           @blue;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    selected-active-background:  @blue;
+    background:                  @bg;
+    selected-normal-foreground:  @lightbg;
+    active-background:           @background;
+    alternate-active-foreground: @blue;
+    alternate-normal-background: @lightbg;
+    foreground:                  @fg;
+    selected-urgent-background:  @red;
+    selected-urgent-foreground:  @background;
+    normal-foreground:           @foreground;
+    alternate-urgent-foreground: @red;
+    selected-normal-background:  @lightfg;
+}
+
+window {
   border-radius: 0;
   padding: 5px 0;
   background-color: @surface;
   border: 0;
-}}
+}
 
-mainbox {{
+mainbox {
   padding: 0;
   border: 0;
-}}
+}
 
-message {{
+message {
   padding: 0;
   border-color: @primary;
   border: 2px 0px 0px;
-}}
+}
 
-textbox {{
+textbox {
   text-color: @on-surface;
-}}
+}
 
-listview {{
+listview {
   padding: 0px 0px 0px;
   scrollbar: false;
   border-color: 0;
   spacing: 4px;
   fixed-height: 0;
   border: 0;
-}}
+}
 
-element {{
+element {
   padding: 5px 25px;
   border: 0;
-}}
+}
 
-element normal.normal {{
+element normal.normal {
   background-color: @surface ;
   text-color: @on-surface;
-}}
+}
 
-element normal.urgent {{
+element normal.urgent {
   background-color: @surface;
   text-color: @on-surface;
-}}
+}
 
-element normal.active {{
+element normal.active {
   background-color: @surface;
   text-color: @on-surface;
-}}
+}
 
-element selected.normal {{
+element selected.normal {
   background-color: @primary;
   text-color: @surface;
-}}
+}
 
-element selected.urgent {{
+element selected.urgent {
   background-color: @primary;
   text-color: @on-surface;
-}}
+}
 
-element selected.active {{
+element selected.active {
   background-color: @primary;
   text-color: @on-surface;
-}}
+}
 
-element alternate.normal {{
+element alternate.normal {
   background-color: @surface;
   text-color: @on-surface;
-}}
+}
 
-element alternate.urgent {{
+element alternate.urgent {
   background-color: @alternate-urgent-background;
   text-color: @alternate-urgent-foreground;
-}}
+}
 
-element alternate.active {{
+element alternate.active {
   background-color: @alternate-active-background;
   text-color: @alternate-active-foreground;
-}}
+}
 
-scrollbar {{
+scrollbar {
   enabled: false;
-}}
+}
 
-sidebar {{
+sidebar {
   border-color: @separatorcolor;
   border: 0px 0px 0px;
-}}
+}
 
-button {{
+button {
   spacing: 0;
   text-color: @normal-foreground;
-}}
+}
 
-button selected {{
+button selected {
   background-color: @selected-normal-background;
   text-color: @selected-normal-foreground;
-}}
+}
 
-inputbar {{
+inputbar {
   enabled: false;
   padding: 2px;
   spacing: 0px;
   text-color: @normal-foreground;
   children: [ prompt, textbox-prompt-colon, entry, case-indicator];
-}}
+}
 
-case-indicator {{
+case-indicator {
   spacing: 0;
   text-color: @normal-foreground;
-}}
+}
 
-entry {{
+entry {
   spacing: 0;
   text-color: @normal-foreground;
-}}
+}
 
-prompt {{
+prompt {
   spacing: 0;
   text-color: @normal-foreground;
-}}
+}
 
-textbox-prompt-colon {{
+textbox-prompt-colon {
   margin: 0px 0.3000em 0.0000em 0.0000em;
   expand: false;
   str: "";
   text-color: inherit;
-}}
+}

@@ -1,0 +1,14 @@
+bg = "#1d2021"
+bg_alt "#32302f"
+
+fg = "#fbf1c7"
+
+red = "#fb4934"
+green = "#b8bb26"
+yellow = "#fabd2f"
+blue = "#83a598"
+purple = "#d3869b"
+aqua = "#8ec07c"
+gray = "#ebdbb2"
+orange = "#fe8019"
+
