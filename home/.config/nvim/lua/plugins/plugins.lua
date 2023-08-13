@@ -102,14 +102,14 @@ return {
         "phpmd",
         "phpcs",
         "phpstan",
-        -- TS / JS
+        -- Web
         "typescript-language-server",
+        "css-lsp",
         -- Ansible
         "ansible-language-server",
         "ansible-lint",
         -- Rust
         "rust-analyzer",
-        "rustfmt",
         -- Docker
         "docker-compose-language-service",
         "dockerfile-language-server",
