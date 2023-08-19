@@ -6,14 +6,6 @@ return {
     enabled = false,
   },
   {
-    "ggandor/leap.nvim",
-    enabled = false,
-  },
-  {
-    "ggandor/flit.nvim",
-    enabled = false,
-  },
-  {
     "folke/persistence.nvim",
     enabled = false,
   },
@@ -102,14 +94,14 @@ return {
         "phpmd",
         "phpcs",
         "phpstan",
-        -- Web
+        -- TS / JS
         "typescript-language-server",
-        "css-lsp",
         -- Ansible
         "ansible-language-server",
         "ansible-lint",
         -- Rust
         "rust-analyzer",
+        "rustfmt",
         -- Docker
         "docker-compose-language-service",
         "dockerfile-language-server",
