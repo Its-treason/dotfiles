@@ -94,3 +94,9 @@
     body = "*timon*"
     urgency = critical
     background = "#fb4934"
+
+[pm_are_urgent]
+    appname = Ferdium
+    summary = "*Direktnachricht*"
+    urgency = critical
+    background = "#fb4934"

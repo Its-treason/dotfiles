@@ -176,6 +176,12 @@ bindsym Control+Shift+l exec i3lock -f -c 282828
 exec --no-startup-id xset s 600
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -f -c 282828
 
+# Set wallpaper
+exec --no-startup-id feh --recursive --bg-fill --randomize ~/Bilder/wallpaper/
+
+# Dunst
+exec --no-startup-id dunst -print >> ~/notfication_history.jsonl
+
 # Start gnome-keyring-daemon, used for ssh or something,
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
 
