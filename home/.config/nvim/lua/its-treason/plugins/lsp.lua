@@ -20,7 +20,8 @@ return {
               }
             }
           }
-        }
+        },
+        eslint = {},
       }
     },
     config = function(_, opts)
@@ -83,6 +84,7 @@ return {
         "typescript-language-server",
         "eslint",
         "tsserver",
+        "prettier",
         -- Ansible
         "ansible-language-server",
         "ansible-lint",

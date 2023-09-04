@@ -60,6 +60,12 @@ return {
     end,
   },
 
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+
   -- Noice, better ui
   {
     "folke/noice.nvim",
@@ -67,7 +73,11 @@ return {
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
+      "nvim-telescope/telescope.nvim",
     },
+    init = function ()
+      require("telescope").load_extension("noice")
+    end,
     opts = {
       cmdline = {
         view = "cmdline",

@@ -2,30 +2,32 @@ export-env {
   $env.RTX_SHELL = "nu"
   
   $env.config = ($env.config | upsert hooks {
-      pre_prompt: [{
+      pre_prompt: ($env.config.hooks.pre_prompt ++
+      [{
       condition: {|| "RTX_SHELL" in $env }
       code: {|| rtx_hook }
-      }]
+      }])
       env_change: {
-          PWD: [{
+          PWD: ($env.config.hooks.env_change.PWD ++
+          [{
           condition: {|| "RTX_SHELL" in $env }
           code: {|| rtx_hook }
-          }]
+          }])
       }
   })
 }
-
+  
 def "parse vars" [] {
   $in | lines | parse "{op},{name},{value}"
 }
-
+  
 def-env rtx [command?: string, --help, ...rest: string] {
   let commands = ["shell", "deactivate"]
-
+  
   if ($command == null) {
     ^"/home/timon/.cargo/bin/rtx"
   } else if ($command == "activate") {
-    $env.RTX_SHELL = "nu"
+    let-env RTX_SHELL = "nu"
   } else if ($command in $commands) {
     ^"/home/timon/.cargo/bin/rtx" $command $rest
     | parse vars
@@ -38,13 +40,13 @@ def-env rtx [command?: string, --help, ...rest: string] {
 def-env "update-env" [] {
   for $var in $in {
     if $var.op == "set" {
-      $env.$var.name = $"($var.value)"
+      load-env {($var.name): $var.value}
     } else if $var.op == "hide" {
       hide-env $var.name
     }
   }
 }
-
+  
 def-env rtx_hook [] {
   ^"/home/timon/.cargo/bin/rtx" hook-env -s nu
     | parse vars

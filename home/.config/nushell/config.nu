@@ -654,3 +654,6 @@ $env.config = {
 source ~/.cache/starship/init.nu
 
 source "~/.config/nushell/rtx.nu"
+
+source "/home/timon/.config/nushell/rtx.nu"
+source "/home/timon/.config/nushell/rtx.nu"

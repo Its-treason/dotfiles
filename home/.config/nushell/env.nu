@@ -67,7 +67,6 @@ $env.PATH = (
     $env.PATH |
     split row (char esep) |
     append '~/.config/composer/vendor/bin/' |
-    append '~/.nvm/versions/node/v16.14.0/bin/' |
     append '~/.yarn/bin' |
     append '~/.cargo/bin' |
     append '~/.spicetify/' |
