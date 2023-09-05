@@ -27,18 +27,11 @@ return {
         desc = "Harpoon: Goto file 1",
       },
       {
-        "<C-t>",
+        "<C-n>",
         function()
           require("harpoon.ui").nav_file(2)
         end,
         desc = "Harpoon: Goto file 2",
-      },
-      {
-        "<C-n>",
-        function()
-          require("harpoon.ui").nav_file(3)
-        end,
-        desc = "Harpoon: Goto file 3",
       },
     },
   },

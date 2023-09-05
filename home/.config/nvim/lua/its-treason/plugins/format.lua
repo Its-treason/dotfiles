@@ -1,36 +1,36 @@
 return {
-  {
-    "mhartington/formatter.nvim",
-    cmd = { "Format", "FormatWrite" },
-    config = function()
-      require("formatter").setup({
-        logging = true,
-        log_level = vim.log.levels.DEBUG,
-        filetype = {
-          -- TODO: Add formatters for other filetypes
-          lua = {
-            require("formatter.filetypes.lua").stylua,
-          },
-          ["*"] = {
-            require("formatter.filetypes.any").remove_trailing_whitespace,
-          },
-        },
-      })
-    end,
-    keys = {
-      {
-        "<leader>cf",
-        vim.cmd.FormatWrite,
-        desc = "Format file",
-      },
-    },
-  },
+	{
+		"nvimdev/guard.nvim",
+		config = function()
+			local ft = require("guard.filetype")
 
-  -- Try to auto guess the files indents
-  {
-    "nmac427/guess-indent.nvim",
-    cmd = { "GuessIndent" },
-    event = "BufReadPre",
-    opts = {},
-  },
+			ft("lua"):fmt("stylua")
+
+			ft("typescript,javascript,typescriptreact"):fmt("prettier"):fmt({
+				cmd = "eslint_d",
+				args = { "--fix" },
+				fname = true,
+			})
+
+			require("guard").setup({
+				fmt_on_save = false,
+				lsp_as_default_formatter = false,
+			})
+		end,
+		keys = {
+			{
+				"<leader>cf",
+				vim.cmd.GuardFmt,
+				desc = "Format file",
+			},
+		},
+	},
+
+	-- Try to auto guess the files indents
+	{
+		"nmac427/guess-indent.nvim",
+		cmd = { "GuessIndent" },
+		event = "BufReadPre",
+		opts = {},
+	},
 }

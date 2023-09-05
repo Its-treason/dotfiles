@@ -38,9 +38,44 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- floating terminal
-map("n", "<leader>ft", function() require("lazy.util").float_term() end, { desc = "Terminal" })
-map("n", "<C-t>", function() require("lazy.util").float_term() end, { desc = "Terminal" })
+-- @type float_term LazyFloat | nil
+local float_term = nil;
+local function open_term()
+  if float_term and float_term:buf_valid() then
+    print("Toogle")
+    float_term:toggle()
+  else
+    print("Open")
+    float_term = require("lazy.util").float_term();
+  end
+end
+
+function ToggleTerm()
+  if float_term then
+    print("Toggle!")
+    float_term:toggle()
+  else
+    print(":(")
+  end
+end
+
+map("n", "<leader>ft", open_term, { desc = "Terminal" })
+map("n", "<C-t>", function ()
+  if float_term then
+    print("Toggle !")
+    float_term:toggle()
+  else
+    print(":(")
+  end
+end, { desc = "Terminal" })
 
 -- Terminal Mappings
 map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
-map("t", "<C-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+map("t", "<C-t>", function ()
+  if float_term and float_term:buf_valid() then
+    float_term:hide({ wipe = true })
+    print(float_term:buf_valid())
+  else
+    print("dont?")
+  end
+end, { desc = "Toggle Term" })

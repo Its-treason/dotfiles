@@ -61,16 +61,12 @@ $env.NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 mkdir ~/.cache/starship
-# TOOD: Commend in again, when starship is updated
-#starship init nu | save -f ~/.cache/starship/init.nu
-
 source ~/.config/nushell/aliase.nu
 
 $env.PATH = (
     $env.PATH |
     split row (char esep) |
     append '~/.config/composer/vendor/bin/' |
-    append '~/.nvm/versions/node/v16.14.0/bin/' |
     append '~/.yarn/bin' |
     append '~/.cargo/bin' |
     append '~/.spicetify/' |
