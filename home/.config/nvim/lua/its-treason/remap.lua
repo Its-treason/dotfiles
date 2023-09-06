@@ -50,32 +50,9 @@ local function open_term()
   end
 end
 
-function ToggleTerm()
-  if float_term then
-    print("Toggle!")
-    float_term:toggle()
-  else
-    print(":(")
-  end
-end
-
 map("n", "<leader>ft", open_term, { desc = "Terminal" })
-map("n", "<C-t>", function ()
-  if float_term then
-    print("Toggle !")
-    float_term:toggle()
-  else
-    print(":(")
-  end
-end, { desc = "Terminal" })
+map("n", "<C-t>", open_term, { desc = "Terminal" })
 
 -- Terminal Mappings
 map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
-map("t", "<C-t>", function ()
-  if float_term and float_term:buf_valid() then
-    float_term:hide({ wipe = true })
-    print(float_term:buf_valid())
-  else
-    print("dont?")
-  end
-end, { desc = "Toggle Term" })
+map("t", "<C-t>", open_term, { desc = "Toggle Term" })

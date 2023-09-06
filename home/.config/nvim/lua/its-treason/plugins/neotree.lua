@@ -17,7 +17,9 @@ return {
         bind_to_cwd = true,
         cwd_target = { sidebar = "windows" },
         hijack_netrw_hevavior = "open_current",
-        follow_current_file = true,
+        follow_current_file = {
+          enabled = true,
+        },
         filtered_items = {
           visible = true,
           hide_dotfiles = false,
