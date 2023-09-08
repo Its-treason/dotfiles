@@ -39,13 +39,12 @@ return {
   -- Project.nvim
   {
     "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup({
+    opts = {
         detection_methods = { "pattern" },
         pattern = { ".git" },
         scope_dir = "win",
-      })
-
+    },
+    init = function()
       local telescope = require("telescope")
       telescope.load_extension("projects")
     end,

@@ -40,6 +40,7 @@ return {
       { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "Goto T[y]pe Definition" },
       { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
       { "K", vim.lsp.buf.hover, desc = "Hover" },
+      { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
       { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" } },
       {
         "<leader>cA",
