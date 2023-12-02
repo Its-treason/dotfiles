@@ -14,7 +14,7 @@ return {
       {
         "<leader><space>",
         function ()
-          require("telescope.builtin").find_files()
+          require("telescope.builtin").find_files({ cwd = vim.loop.cwd() })
         end,
         desc = "Find Files (root dir)"
       },
@@ -34,13 +34,16 @@ return {
         end,
         desc = "Find Files (cwd)",
       },
-      { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-      {
-        "<leader>fR",
+      { 
+        "<leader>fr",
         function ()
-          require("telescope.builtin").oldfiles({ cwd = vim.loop.cwd() })
+          require("telescope.builtin").oldfiles({
+            cwd = vim.loop.cwd(),
+            sorter = require("telescope.sorters").fuzzy_with_index_bias(),
+          })
         end,
-        desc = "Recent (cwd)" },
+        desc = "Recent files"
+      },
       -- git
       { "<leader>sgc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
       { "<leader>sgs", "<cmd>Telescope git_status<CR>", desc = "status" },

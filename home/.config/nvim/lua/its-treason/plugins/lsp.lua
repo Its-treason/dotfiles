@@ -22,7 +22,8 @@ return {
           }
         },
         eslint = {},
-      }
+        cssls = {},
+      },
     },
     config = function(_, opts)
       local lsp_config = require("lspconfig")
@@ -64,9 +65,9 @@ return {
     lazy = false,
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {
-    --   settings = {
-    --     tsserver_path = "/home/timon/.yarn/bin/tsserver",
-    --   },
+      settings = {
+        tsserver_path = "/home/timon/.yarn/bin/tsserver",
+      },
     },
   },
 
@@ -96,6 +97,7 @@ return {
         "docker-compose-language-service",
         "dockerfile-language-server",
         -- Common
+        "codespell",
         "tree-sitter-cli",
         "sqlls",
         "bash-language-server",

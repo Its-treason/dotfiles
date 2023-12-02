@@ -3,22 +3,27 @@ return {
 		"nvimdev/guard.nvim",
 		event = { "BufEnter", "BufNewFile" },
 		cmd = "GuardFmt",
+		dependencies = {
+			"nvimdev/guard-collection",
+		},
 		config = function()
 			local ft = require("guard.filetype")
 
-			ft("lua"):fmt("stylua")
+			ft("lua"):fmt("stylua"):lint("codespell")
 
-			ft("typescript,javascript,typescriptreact"):fmt("prettier"):fmt({
-				fn = function()
-					vim.cmd("EslintFixAll")
-				end,
-			})
+			ft("typescript,javascript,typescriptreact")
+				:fmt("prettier")
+				:fmt({
+					fn = function()
+						vim.cmd("EslintFixAll")
+					end,
+				})
+				:lint("codespell")
 
 			require("guard").setup({
 				fmt_on_save = false,
 				lsp_as_default_formatter = false,
 			})
-			vim.cmd.GuardEnable()
 		end,
 		keys = {
 			{

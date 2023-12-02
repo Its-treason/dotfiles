@@ -1,18 +1,19 @@
-local opt = vim.opt;
+local opt = vim.opt
 
 -- NMAC427/guess-indent.nvim -- Will automaticily change these settings depending on the file
 opt.expandtab = true -- Use Spaces instead of tabs
 opt.shiftwidth = 2 -- Indent size
 opt.shiftround = true -- Auto round indents
 opt.tabstop = 2 -- Number of 2 a Tab does
-opt.smartindent = true -- Insert indents automaticlly
+opt.smartindent = true -- Insert indents automatically
 opt.wrap = true -- Enable line wraps
 opt.colorcolumn = "80,120" -- Show gutters at 80 and 120 characters
+opt.ignorecase = true
 
 opt.scrolloff = 6 -- Always show 6 lines of context
 opt.autowrite = true
 opt.signcolumn = "yes"
-opt.cursorline = true -- Enable hightlighting of the current line
+opt.cursorline = true -- Enable highlighting of the current line
 opt.list = true -- Show some invisible characters
 opt.number = true -- Show line number
 opt.relativenumber = true -- Line number should be relative
@@ -31,8 +32,12 @@ vim.cmd("au FocusLost * :wa")
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+	group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
+
+
+-- TMP marcros
+
