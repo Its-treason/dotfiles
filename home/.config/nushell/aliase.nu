@@ -31,3 +31,26 @@ def gcp [] {
 alias ll = ls -la
 
 alias j = just
+
+def totp [secret] {
+  let token = http get https://2fa.live/tok/($secret) | get token;
+  echo $token | xclip -selection clipboard;
+  echo $"Yout OTP token is ($token) and is copied to clipboard";
+}
+
+def update-all [] {
+  print "> sudo apt update\n";
+  sudo apt update;
+  print "\n> sudo apt upgrade -y\n";
+  sudo apt upgrade -y;
+  print "\n> sudo apt autoremove -y\n";
+  sudo apt autoremove -y;
+
+  print "\n> rustup update\n";
+  rustup update;
+  print "\n> cargo install-update --all\n";
+  cargo install-update --all;
+
+  print "\n> bun upgrade\n";
+  bun upgrade;
+}

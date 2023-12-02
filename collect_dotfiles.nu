@@ -39,5 +39,5 @@ $files | each { |$file|
   } else {
     print $"Skipping: ($env.HOME)/($file) becuase it was deleted";
   }
-}
+};
 
