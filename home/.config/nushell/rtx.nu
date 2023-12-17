@@ -37,7 +37,7 @@ def --wrapped rtx [command?: string, --help, ...rest: string] {
   }
 }
   
-def-env "update-env" [] {
+def --env "update-env" [] {
   for $var in $in {
     if $var.op == "set" {
       load-env {($var.name): $var.value}
@@ -47,7 +47,7 @@ def-env "update-env" [] {
   }
 }
   
-def-env rtx_hook [] {
+def --env rtx_hook [] {
   ^"/home/timon/.cargo/bin/rtx" hook-env -s nu
     | parse vars
     | update-env

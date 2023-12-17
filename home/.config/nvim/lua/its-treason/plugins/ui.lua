@@ -79,7 +79,6 @@ return {
 	-- Noice, better ui
 	{
 		"folke/noice.nvim",
-		enabled = false,
 		event = "VeryLazy",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
@@ -218,6 +217,11 @@ return {
 			wk.setup(opts)
 			wk.register(opts.defaults)
 		end,
+	},
+
+	{
+		"j-hui/fidget.nvim",
+		event = "VeryLazy",
 	},
 
 	-- icons

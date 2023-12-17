@@ -20,11 +20,13 @@ require("lazy").setup("its-treason/plugins", {
     cmd = "diffview.nvim",
   },
   checker = {
-    enabled  = false,
+    enabled  = true,
+    notify = false,
   },
   change_detection = {
     -- Disable change detection, annoying as fuck when developing
-    -- enabled = false,
+    enabled = true,
+    notify = false,
   },
   performance = {
     rtp = {
