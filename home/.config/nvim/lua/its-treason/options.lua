@@ -1,6 +1,5 @@
 local opt = vim.opt
 
--- NMAC427/guess-indent.nvim -- Will automaticily change these settings depending on the file
 opt.expandtab = true -- Use Spaces instead of tabs
 opt.shiftwidth = 2 -- Indent size
 opt.shiftround = true -- Auto round indents
@@ -26,6 +25,8 @@ opt.undofile = true
 opt.termguicolors = true
 
 opt.updatetime = 50
+
+opt.mouse = ""
 
 -- Auto save
 vim.cmd("au FocusLost * :wa")

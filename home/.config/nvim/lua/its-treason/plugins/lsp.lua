@@ -39,46 +39,8 @@ return {
 			end
 		end,
 		keys = {
-			{
-				"gd",
-				function()
-					require("telescope.builtin").lsp_definitions({ reuse_win = true })
-				end,
-				desc = "Goto Definition",
-			},
-			{ "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
-			{
-				"gI",
-				function()
-					require("telescope.builtin").lsp_implementations({ reuse_win = true })
-				end,
-				desc = "Goto Implementation",
-			},
-			{
-				"gy",
-				function()
-					require("telescope.builtin").lsp_type_definitions({ reuse_win = true })
-				end,
-				desc = "Goto T[y]pe Definition",
-			},
-			{ "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
 			{ "K", vim.lsp.buf.hover, desc = "Hover" },
 			{ "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
-			{ "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" } },
-			{
-				"<leader>cA",
-				function()
-					vim.lsp.buf.code_action({
-						context = {
-							only = {
-								"source",
-							},
-							diagnostics = {},
-						},
-					})
-				end,
-				desc = "Source Action",
-			},
 		},
 	},
 
@@ -92,6 +54,37 @@ return {
 			"nvim-tree/nvim-web-devicons",
 			"nvim-treesitter/nvim-treesitter",
 		},
+		keys = {
+			{
+				"gd",
+				"<cmd>Lspsaga goto_definition<cr>",
+				desc = "Goto definition",
+			},
+			{
+				"gr",
+				"<cmd>Lspsaga finder ref+imp<cr>",
+				desc = "Goto References",
+			},
+
+			{
+				"K",
+				"<cmd>Lspsaga hover_doc<cr>",
+				desc = "Hover docs",
+			},
+
+			{
+				"<leader>ca",
+				"<cmd>Lspsaga code_action<cr>",
+				desc = "Code action",
+			},
+
+			{
+				"<C-t>",
+				"<cmd>Lspsaga term_toggle<cr>",
+				desc = "Toggle terminal",
+				mode = { "n", "t" },
+			}
+		}
 	},
 
 	{

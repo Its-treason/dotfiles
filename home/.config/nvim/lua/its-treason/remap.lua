@@ -36,23 +36,3 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsea
 -- better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
-
--- floating terminal
--- @type float_term LazyFloat | nil
-local float_term = nil;
-local function open_term()
-  if float_term and float_term:buf_valid() then
-    print("Toogle")
-    float_term:toggle()
-  else
-    print("Open")
-    float_term = require("lazy.util").float_term();
-  end
-end
-
-map("n", "<leader>ft", open_term, { desc = "Terminal" })
-map("n", "<C-t>", open_term, { desc = "Terminal" })
-
--- Terminal Mappings
-map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
-map("t", "<C-t>", open_term, { desc = "Toggle Term" })
