@@ -8,6 +8,7 @@ opt.smartindent = true -- Insert indents automatically
 opt.wrap = true -- Enable line wraps
 opt.colorcolumn = "80,120" -- Show gutters at 80 and 120 characters
 opt.ignorecase = true
+opt.title = true
 
 opt.scrolloff = 6 -- Always show 6 lines of context
 opt.autowrite = true
@@ -29,7 +30,7 @@ opt.updatetime = 50
 opt.mouse = ""
 
 -- Auto save
-vim.cmd("au FocusLost * :wa")
+-- vim.cmd("au FocusLost * :wa")
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {

@@ -177,7 +177,9 @@ exec --no-startup-id xset s 600
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -f -c 282828
 
 # Set wallpaper
-exec --no-startup-id feh --recursive --bg-fill --randomize ~/Bilder/wallpaper/
+#exec --no-startup-id feh --recursive --bg-fill --randomize ~/Bilder/wallpaper/
+exec_always --no-startup-id killall back4.sh 
+exec_always --no-startup-id ~/.config/i3/back4.sh auto ~/Bilder/wallpaper/dancing-polish-cow-at4am.gif
 
 # Dunst
 exec --no-startup-id dunst -print >> ~/notfication_history.jsonl
@@ -185,5 +187,5 @@ exec --no-startup-id dunst -print >> ~/notfication_history.jsonl
 # Start gnome-keyring-daemon, used for ssh or something,
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
 
-# Set keyboard layout to german
-exec --no-startup-id setxkbmap de
+# Set keyboard layout
+exec --no-startup-id setxkbmap eu
