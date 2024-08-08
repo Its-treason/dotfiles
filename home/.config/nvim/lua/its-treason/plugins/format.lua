@@ -9,6 +9,13 @@ return {
 		config = function()
 			local ft = require("guard.filetype")
 
+			ft("rust")
+			  :lint("codespell")
+				:extra({
+					"-L",
+					"crate",
+				})
+
 			ft("lua"):fmt("stylua"):lint("codespell")
 
 			ft("typescript,javascript,typescriptreact")
@@ -44,7 +51,14 @@ return {
 
 	{
 		"windwp/nvim-ts-autotag",
-		event = { "BufEnter", "BufNewFile" },
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"javascript.jsx",
+			"typescript",
+			"typescriptreact",
+			"typescript.tsx",
+		},
 		opts = {
 			enable = true,
 			enable_rename = true,

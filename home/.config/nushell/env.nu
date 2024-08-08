@@ -63,6 +63,8 @@ $env.NU_PLUGIN_DIRS = [
 mkdir ~/.cache/starship
 source ~/.config/nushell/aliase.nu
 
+zoxide init nushell | save -f ~/.zoxide.nu
+
 $env.PATH = (
     $env.PATH |
     split row (char esep) |

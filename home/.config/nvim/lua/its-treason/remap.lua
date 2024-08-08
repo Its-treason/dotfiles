@@ -36,3 +36,6 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsea
 -- better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+-- ESC to leave terminal Input mode
+map("t", "<Esc>", "<C-\\><C-n>")

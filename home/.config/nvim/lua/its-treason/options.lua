@@ -30,7 +30,7 @@ opt.updatetime = 50
 opt.mouse = ""
 
 -- Auto save
--- vim.cmd("au FocusLost * :wa")
+vim.cmd("au FocusLost * :wa")
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {

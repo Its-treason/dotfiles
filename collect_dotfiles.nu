@@ -18,12 +18,13 @@ let dirs = [
 ];
 $dirs | each { |$dir|
   print $"cp -r ($env.HOME)/($dir)/* ($env.PWD)/($dir)"
-  cp -r $"($env.HOME)/($dir)/*" $"($env.PWD)/($dir)"
+  cp -r ($"($env.HOME)/($dir)/*" | into glob) $"($env.PWD)/($dir)"
 }
 
 # Collect all files and copy them from the local config dir into here
 let files = (glob -D ** | each { $in | str substring (($env.PWD | str length) + 1)..($in | str length) } | skip 1)
-$files | each { |$file|
+
+for $file in $files {
   if ($file | str contains ".git") {
     continue;
   }
@@ -39,5 +40,5 @@ $files | each { |$file|
   } else {
     print $"Skipping: ($env.HOME)/($file) becuase it was deleted";
   }
-};
+}
 

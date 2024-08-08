@@ -24,8 +24,32 @@ return {
 				eslint = {},
 				cssls = {},
 
-				-- phpactor = {},
-				intelephense = {},
+				phpactor = {
+					init_options = {
+						["language_server_phpstan.enabled"] = false,
+						["language_server_psalm.enabled"] = false,
+						["php_code_sniffer.enabled"] = false,
+						["phpunit.enabled"] = true,
+						["indexer.exclude_patterns"] = {
+							"/vendor/**/Tests/**/*",
+							"/vendor/**/tests/**/*",
+							"/var/cache/**/*",
+							"/vendor/composer/**/*",
+						},
+						["language_server.diagnostics_on_update"] = false,
+					},
+				},
+				-- intelephense = {},
+
+				rust_analyzer = {
+					settings = {
+						["rust-analyzer"] = {
+							checkOnSave = {
+								command = "clippy",
+							},
+						},
+					},
+				},
 			},
 		},
 		config = function(_, opts)
@@ -45,11 +69,18 @@ return {
 	},
 
 	{
+		"zeioth/garbage-day.nvim",
+		dependencies = "neovim/nvim-lspconfig",
+		event = "LspAttach",
+		opts = {},
+	},
+
+	{
 		"nvimdev/lspsaga.nvim",
 		config = function()
 			require("lspsaga").setup({})
 		end,
-    event = "LspAttach",
+		event = "LspAttach",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 			"nvim-treesitter/nvim-treesitter",
@@ -83,13 +114,20 @@ return {
 				"<cmd>Lspsaga term_toggle<cr>",
 				desc = "Toggle terminal",
 				mode = { "n", "t" },
-			}
-		}
+			},
+		},
 	},
 
 	{
 		"pmizio/typescript-tools.nvim",
-		lazy = false,
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"javascript.jsx",
+			"typescript",
+			"typescriptreact",
+			"typescript.tsx",
+		},
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {
 			settings = {

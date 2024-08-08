@@ -24,7 +24,7 @@ def gcp [] {
   git status -s;
   let prefix = (git branch --show-current);
   let message = (input $"Commit message \(Using Prefix \"($prefix):\"): ");
-  git commit -m $"($prefix): ($message)";
+  git commit --signoff -m $"($prefix): ($message)";
 }
 
 # Others
@@ -53,4 +53,15 @@ def update-all [] {
 
   print "\n> bun upgrade\n";
   bun upgrade;
+}
+
+def sshi [] {
+  let options = open ~/.ssh/config|split row "\n"|filter { |$x| ($x | str starts-with "Host ") and $x != "Host *" }|parse "Host {target}"|get target|str join "\n";
+  let result = echo $options|rofi -p "ssh" -dmenu -i --config "~/.config/rofi/run.rasi";
+  if ($result | is-empty) {
+    print "Aborting!";
+    return;
+  }
+  print Connection to $result;
+  ssh $result;
 }

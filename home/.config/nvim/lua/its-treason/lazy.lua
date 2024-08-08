@@ -46,6 +46,6 @@ require("lazy").setup("its-treason/plugins", {
 })
 
 -- Set the colorscheme
-vim.cmd.colorscheme("gruvbox")
+vim.cmd.colorscheme("tokyonight-night")
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "None" })
