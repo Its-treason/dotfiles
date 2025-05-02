@@ -1,0 +1,236 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+surface = #1d2021
+on_surface = #fbf1c7
+
+red = "#fb4934"
+green = "#b8bb26"
+yellow = "#fabd2f"
+blue = "#83a598"
+purple = "#d3869b"
+aqua = "#8ec07c"
+gray = "#ebdbb2"
+orange = "#fe8019"
+
+primary = ${self.blue}
+alert = ${self.red}
+
+[bar/bar1]
+monitor = ${env:MONITOR}
+width = 100%
+height = 27
+offset-x = 0
+offset-y = 0
+fixed-center = true
+enable-ipc = true
+
+background = ${colors.surface}
+foreground = ${colors.on_surface}
+
+line-size = 9
+line-color = ${colors.on_surface}
+
+border-top-size = 0
+border-right-size = 0
+border-bottom-size = 0
+border-left-size = 0
+radius = 0
+
+padding-left = 0
+padding-right = 3
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "Ubuntu:size=10:antialias=true;2"
+font-1 = "MesloLGS NF:pixelsize=10:antialias=true;3"
+font-2 = "MesloLGS NF:pixelsizesize=15:antialias=true;3"
+font-3 = "MesloLGS NF:pixelsize=8:antialias=true;2"
+
+modules-left = i3
+modules-center = calendar
+modules-right = temp divider battery divider cpu divider memory divider packages divider pulseaudio divider wireless divider eth
+
+tray-position = right
+tray-padding = 2
+tray-background = #1d1d1d
+tray-radius = 4
+
+wm-restack = i3
+
+override-redirect = false
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/memory]
+type = internal/memory
+interval = 3
+
+label = "%{T3}%{T1} %percentage_used%%"
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+
+label = "%{T3}%{T1} %percentage%%"
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-mode-foreground = #000
+label-mode-background = ${colors.green}
+label-mode-padding = 1
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-foreground = ${colors.surface}
+label-focused-background = ${colors.green}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-foreground = ${colors.surface}
+label-visible-background = ${self.label-focused-background}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+[module/eth]
+type = internal/network
+interface = lo
+
+format-connected-prefix-foreground = ${colors.on_surface}
+label-connected = "%{T3}%{T-} %local_ip%"
+
+label-disconnected = "%{T3}%{T-} No Connection"
+
+[module/wireless]
+type = internal/network
+interface = wlp0s20f3
+
+format-connected = <label-connected>
+label-connected = %{T3}直%{T-} %local_ip%
+
+format-disconnected = <label-disconnected>
+label-disconnected = %{T3}睊%{T-} No Connection
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+label-volume = "%{T3}%{T1} %percentage%%"
+
+# set your standard output. Get all sinks with: 'pactl list short sinks'
+sink = alsa_output.pci-0000_28_00.3.analog-stereo
+
+label-muted = "%{T2}婢%{T-} MUTED"
+
+[module/calendar]
+type = custom/script
+exec = ~/.config/polybar/cal.sh
+interval = 5
+click-left = ~/.config/polybar/cal.sh --popup &
+
+[module/packages]
+type = custom/script
+exec = ~/.config/polybar/packages.sh
+interval = 500
+
+[module/battery]
+type = internal/battery 
+full-at = 99
+battery = BAT0
+adapter = AC
+poll-interwal = 20
+
+label-full = %{T4}%{T-} %percentage%%
+
+format-charging = <ramp-capacity> <label-charging>
+label-charging = "%{T4}%{T-} %percentage%%"
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+
+ramp-capacity-0 = %{T4}%{T-}
+ramp-capacity-1 = %{T4}%{T-}
+ramp-capacity-2 = %{T4}%{T-}
+ramp-capacity-3 = %{T4}%{T-}
+ramp-capacity-4 = %{T4}%{T-}
+ramp-capacity-5 = %{T4}%{T-}
+ramp-capacity-6 = %{T4}%{T-}
+ramp-capacity-7 = %{T4}%{T-}
+ramp-capacity-8 = %{T4}%{T-}
+ramp-capacity-9 = %{T4}%{T-}
+
+[module/temp]
+type = internal/temperature
+interval = 10
+thermal-zone = 2
+hwon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp2_input
+
+base-temperature = 40
+warn-temperature = 70
+
+units = true
+
+format = <ramp> <label>
+label = %temperature-c%
+
+format-warn = <ramp> <label-warn>
+label-warn = %{T3}%{T-} %temperature-c%
+
+ramp-0 = %{T4}%{T-}
+ramp-1 = %{T4}%{T-}
+ramp-2 = %{T4}%{T-}
+ramp-3 = %{T4}%{T-}
+ramp-4 = %{T4}%{T-}
+
+[module/divider]
+type = custom/text
+content = %{T3}/%{T-}
+content-foreground = ${colors.yellow}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+pseudo-transparency = false
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini
