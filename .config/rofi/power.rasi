@@ -1,8 +1,8 @@
 configuration {
-  width: 10;
+  width: 10px;
   lines: 4;
   columns: 1;
-  font: "Ubuntu 11";
+  font: "RobotoMono 11";
   bw: 0;
   location: 3;
   padding: 10;
@@ -144,6 +144,8 @@ window {
   padding: 5px 0;
   background-color: @surface;
   border: 0;
+  width: 250px;
+  height: 150px;
 }
 
 mainbox {

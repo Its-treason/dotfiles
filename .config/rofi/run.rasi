@@ -3,7 +3,7 @@ configuration {
 	width: 30;
 	lines: 15;
 /*	columns: 1;*/
-	font: "Ubuntu 11";
+	font: "RobotoMono 11";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
@@ -191,21 +191,24 @@ configuration {
 }
 
 window {
-    padding:          15px 5px;
+    padding:          0;
     background-color: @background;
     border-radius: 0;
+    border: 0;
 }
 mainbox {
-    padding: 1px;
+    padding: 0px;
     border:  0;
 }
 message {
-    padding:      1px;
+    padding:      4px;
     border-color: @separatorcolor;
-    border:       2px solid 0px 0px ;
+    border:       0;
 }
 textbox {
     text-color: @foreground;
+    padding:      4px;
+    height: 10px;
 }
 listview {
     padding:      2px 0px 0px ;
@@ -280,7 +283,7 @@ button selected {
     text-color:       @selected-normal-foreground;
 }
 inputbar {
-    padding:    1px ;
+    padding:    5px 5px 1px 5px;
     spacing:    0px ;
     text-color: @normal-foreground;
     children:   [ prompt,textbox-prompt-colon,entry,overlay,case-indicator ];

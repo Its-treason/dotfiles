@@ -151,7 +151,8 @@ for_window [class="^.*"] border pixel 2
 for_window [class="Yad" title="yad-calendar"] floating enable
 
 # Enable gaps
-#gaps inner 5px
+gaps inner 6px
+smart_gaps on
 
 # Dont hide any border
 hide_edge_borders none
@@ -177,9 +178,10 @@ exec --no-startup-id xset s 600
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -f -c 282828
 
 # Set wallpaper
-exec --no-startup-id feh --recursive --bg-fill --randomize ~/Bilder/wallpaper/
-#exec_always --no-startup-id killall back4.sh 
-#exec_always --no-startup-id ~/.config/i3/back4.sh auto ~/Bilder/wallpaper/dancing-polish-cow-at4am.gif
+exec_always --no-startup-id feh --recursive --bg-fill --randomize ~/Bilder/wallpaper/
+
+# Compositor
+exec --no-startup-id picom
 
 # Dunst
 exec --no-startup-id dunst -print >> ~/notfication_history.jsonl
@@ -188,4 +190,4 @@ exec --no-startup-id dunst -print >> ~/notfication_history.jsonl
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
 
 # Set keyboard layout
-exec --no-startup-id setxkbmap eu
+exec_always --no-startup-id setxkbmap eu
