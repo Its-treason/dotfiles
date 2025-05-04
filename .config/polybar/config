@@ -60,9 +60,9 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = "Ubuntu:size=10:antialias=true;2"
-font-1 = "MesloLGS NF:pixelsize=10:antialias=true;3"
-font-2 = "MesloLGS NF:pixelsizesize=15:antialias=true;3"
-font-3 = "MesloLGS NF:pixelsize=8:antialias=true;2"
+font-1 = "RobotoMono Nerd Font:pixelsize=9:antialias=true;2"
+font-2 = "RobotoMono Nerd Font:pixelsizesize=15:antialias=true;3"
+font-3 = "RobotoMono Nerd Font:pixelsize=8:antialias=true;2"
 
 modules-left = i3
 modules-center = calendar
@@ -84,13 +84,13 @@ cursor-scroll = ns-resize
 type = internal/memory
 interval = 3
 
-label = "%{T3}%{T1} %percentage_used%%"
+label = "%{T2} %{T1}%percentage_used%%"
 
 [module/cpu]
 type = internal/cpu
 interval = 1
 
-label = "%{T3}%{T1} %percentage%%"
+label = "%{T2} %{T1}%percentage%%"
 
 [module/i3]
 type = internal/i3
@@ -131,30 +131,30 @@ type = internal/network
 interface = lo
 
 format-connected-prefix-foreground = ${colors.on_surface}
-label-connected = "%{T3}%{T-} %local_ip%"
+label-connected = "%{T2}󰌘 %{T-}%local_ip%"
 
-label-disconnected = "%{T3}%{T-} No Connection"
+label-disconnected = "%{T2}󰌙 %{T-}No Ethernet"
 
 [module/wireless]
 type = internal/network
-interface = wlp0s20f3
+interface = wlp2s0
 
 format-connected = <label-connected>
-label-connected = %{T3}直%{T-} %local_ip%
+label-connected = %{T3}󰑩%{T-} %local_ip% (%essid%)
 
 format-disconnected = <label-disconnected>
-label-disconnected = %{T3}睊%{T-} No Connection
+label-disconnected = %{T3}󱖣 %{T-}No WIFI
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-label-volume = "%{T3}%{T1} %percentage%%"
+label-volume = "%{T2} %{T1} %percentage%%"
 
 # set your standard output. Get all sinks with: 'pactl list short sinks'
 sink = alsa_output.pci-0000_28_00.3.analog-stereo
 
-label-muted = "%{T2}婢%{T-} MUTED"
+label-muted = "%{T2}󰝟 %{T-} MUTED"
 
 [module/calendar]
 type = custom/script
@@ -171,27 +171,37 @@ interval = 500
 type = internal/battery 
 full-at = 99
 battery = BAT0
-adapter = AC
+adapter = AC0
 poll-interwal = 20
 
-label-full = %{T4}%{T-} %percentage%%
+label-full = %{T2}󰂅%{T-} %percentage%%
 
-format-charging = <ramp-capacity> <label-charging>
-label-charging = "%{T4}%{T-} %percentage%%"
+format-charging = <animation-charging> <label-charging>
+label-charging = "%percentage%%"
+
+animation-charging-0 = %{T2}󰢜%{T-}
+animation-charging-1 = %{T2}󰂆%{T-}
+animation-charging-2 = %{T2}󰂇%{T-}
+animation-charging-3 = %{T2}󰂈%{T-}
+animation-charging-4 = %{T2}󰢝%{T-}
+animation-charging-5 = %{T2}󰂉%{T-}
+animation-charging-6 = %{T2}󰢞%{T-}
+animation-charging-7 = %{T2}󰂊%{T-}
+animation-charging-8 = %{T2}󰂅%{T-}
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%%
 
-ramp-capacity-0 = %{T4}%{T-}
-ramp-capacity-1 = %{T4}%{T-}
-ramp-capacity-2 = %{T4}%{T-}
-ramp-capacity-3 = %{T4}%{T-}
-ramp-capacity-4 = %{T4}%{T-}
-ramp-capacity-5 = %{T4}%{T-}
-ramp-capacity-6 = %{T4}%{T-}
-ramp-capacity-7 = %{T4}%{T-}
-ramp-capacity-8 = %{T4}%{T-}
-ramp-capacity-9 = %{T4}%{T-}
+ramp-capacity-0 = %{T2}󱃍%{T-}
+ramp-capacity-1 = %{T2}󰁺%{T-}
+ramp-capacity-2 = %{T2}󰁻%{T-}
+ramp-capacity-3 = %{T2}󰁽%{T-}
+ramp-capacity-4 = %{T2}󰁽%{T-}
+ramp-capacity-5 = %{T2}󰁾%{T-}
+ramp-capacity-6 = %{T2}󰁿%{T-}
+ramp-capacity-7 = %{T2}󰂀%{T-}
+ramp-capacity-8 = %{T2}󰂁%{T-}
+ramp-capacity-9 = %{T2}󰂂%{T-}
 
 [module/temp]
 type = internal/temperature
@@ -208,13 +218,13 @@ format = <ramp> <label>
 label = %temperature-c%
 
 format-warn = <ramp> <label-warn>
-label-warn = %{T3}%{T-} %temperature-c%
+label-warn = %{T2} %{T-}%temperature-c%
 
-ramp-0 = %{T4}%{T-}
-ramp-1 = %{T4}%{T-}
-ramp-2 = %{T4}%{T-}
-ramp-3 = %{T4}%{T-}
-ramp-4 = %{T4}%{T-}
+ramp-0 = %{T2}%{T-}
+ramp-1 = %{T2}%{T-}
+ramp-2 = %{T2}%{T-}
+ramp-3 = %{T2}%{T-}
+ramp-4 = %{T2}%{T-}
 
 [module/divider]
 type = custom/text
