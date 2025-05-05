@@ -152,7 +152,7 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 
 # Enable gaps
 gaps inner 6px
-smart_gaps on
+smart_gaps off
 
 # Dont hide any border
 hide_edge_borders none
