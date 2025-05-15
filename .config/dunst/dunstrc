@@ -24,7 +24,7 @@
     format = "%a\n<b>%s</b>\n%b\n"
 
     width = 300
-    height = 50
+    #height = 50
     offset = 0x0
     origin = bottom-right
 
