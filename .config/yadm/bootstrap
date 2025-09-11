@@ -1,3 +1,4 @@
 #!/bin/bash
 
-sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+

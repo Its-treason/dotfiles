@@ -1,4 +1,7 @@
-import = ["/home/{{ yadm.user }}/.config/alacritty/themes/themes/gruvbox_dark.yaml"]
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/{theme}.toml"
+]
 
 [env]
 TERM = "xterm-256color"
@@ -9,8 +12,8 @@ size = 8.0
 [font.normal]
 family = "RobotoMono Nerd Font"
 
-[shell]
-program = "/home/{{ yadm.user }}/.cargo/bin/nu"
+[terminal]
+shell = "/home/{{ yadm.user }}/.cargo/bin/nu"
 
 [window]
 opacity = 0.95
