@@ -398,7 +398,7 @@ $env.config = {
   color_config: $dark_theme   # if you want a light theme, replace `$dark_theme` to `$light_theme`
   footer_mode: "auto" # always, never, auto
   float_precision: 2 # the precision for displaying floats in tables
-  # buffer_editor: "emacs" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
+  buffer_editor: "nvim" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
   edit_mode: emacs # emacs, vi
   shell_integration: {
@@ -430,7 +430,7 @@ $env.config = {
     reset_application_mode: true
   }
   # true or false to enable or disable the welcome banner at startup
-  show_banner: true
+  show_banner: false
   render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
 
   hooks: {

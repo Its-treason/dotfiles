@@ -1,6 +1,6 @@
 
 * {
-    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "RobotoMono Nerd Font", "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;  /* Slightly smaller font size */
     font-weight: 900;
     margin: 0;
@@ -12,9 +12,9 @@
 /* Reset all styles */
 * {
     border: none;
-    border-radius: 3px;
+    border-radius: 0;
     min-height: 0;
-    margin: 0.2em 0.3em 0.2em 0.3em;
+    margin: 0;
 }
 
 /* The whole bar */
@@ -23,8 +23,6 @@
     color: #ffffff;
     transition-property: background-color;
     transition-duration: 0.5s;
-    border-radius: 0px;
-    margin: 0px 0px;
 }
 
 window#waybar.hidden {
@@ -33,17 +31,19 @@ window#waybar.hidden {
 
 #workspaces button {
     padding: 3px 5px;  /* Adjusted padding to reduce height */
-    margin: 3px 5px;    /* Reduced margin slightly */
-    border-radius: 6px;
+    margin: 0 0;    /* Reduced margin slightly */
+    border-radius: 0;
     color: @foreground;
-    background-color: #111827;
+    opacity: 0.8;
+    background-color: transparent;
     transition: all 0.3s ease-in-out;
     font-size: 13px;  /* Slightly smaller font size */
 }
 
 #workspaces button.active {
-    color: @foreground;
-    background: #025939;
+    color: #1a1b26;
+    background: #1abc9c;
+    opacity: 0.9;
 }
 
 #workspaces button:hover {
@@ -55,27 +55,19 @@ window#waybar.hidden {
 }
 
 #workspaces {
-    background-color: #111827;
-    border-radius: 14px;
-    padding: 3px 6px;  /* Adjusted padding to reduce height */
-}
-
-#window {
-    background-color: #111827;
-    font-size: 15px;   /* Slightly smaller font size */
-    font-weight: 800;
-    color: @foreground;
-    border-radius: 14px;
-    padding: 3px 6px;  /* Reduced padding */
-    margin: 2px;
-    opacity: 1;
+    border-radius: 0px;
+    padding: 0px 0px;  /* Adjusted padding to reduce height */
 }
 
 #clock,
 #battery,
 #cpu,
 #memory,
+#workspaces,
 #disk,
+#tray,
+#window,
+#custom-power,
 #temperature,
 #backlight,
 #network,
@@ -100,49 +92,53 @@ window#waybar.hidden {
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.default {
-    background-color: #111827;
-    border-radius: 14px;
-    padding: 6px;  /* Adjusted padding */
+    background-color: #16161e;
+    opacity: 0.8;
+    border-radius: 0px;
+    padding: 0;  /* Adjusted padding */
+}
+
+#wireplumber {
+    padding: 0 0 0 14px;
 }
 
 #custom-screenshot_t {
-    background-color: #111827;
-    border-radius: 14px;
     padding: 6px;
 }
 
-#custom-spotify {
-    background-color: #111827;
-    border-radius: 14px;
+#custom-spotify.module {
     padding: 3px 12px;
+    color: #1ED760;
 }
 
 #tray {
-    background-color: #111827;
-    border-radius: 14px;
-    padding: 6px;  /* Adjusted padding */
+    padding: 0 4px 0 8px;
+}
+
+#window {
+    padding: 0 6px;  /* Reduced padding */
+}
+#window > label {
+    font-size: 12px;   /* Slightly smaller font size */
+    font-weight: 800;
 }
 
 #cpu {
     color: #fb958b;
-    background-color: #111827;
     padding: 6px;
 }
 
 #memory {
     color: #ebcb8b;
-    background-color: #111827;
     padding: 6px;
 }
 
 #custom-power {
-    background-color: #111827;
-    border-radius: 14px;
-    padding: 6px;
+    padding: 0 2px;
+    font-size: 18px;   /* Slightly smaller font size */
 }
 
 #custom-storage {
-    background-color: #111827;
     border-radius: 14px;
     padding: 6px;
 }
@@ -205,6 +201,7 @@ window#waybar.hidden {
 
 #clock {
     color: #c8d2e0;
+    padding: 0 8px;
 }
 
 #battery {
@@ -258,17 +255,15 @@ label:focus {
 }
 
 #custom-media {
-    background-color: #66cc99;
     color: #2a5c45;
     min-width: 100px;
 }
 
 #custom-media.custom-spotify {
-    background-color: #66cc99;
+    color: #1ED760;
 }
 
 #custom-media.custom-vlc {
-    background-color: #ffa000;
 }
 
 #temperature {
@@ -314,9 +309,16 @@ label:focus {
 }
 
 #keyboard-state > label {
-    padding: 0 0px;
+    padding: 0;
 }
 
 #keyboard-state > label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
+
+.modules-left, .modules-center, .modules-right {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
