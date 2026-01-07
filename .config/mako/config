@@ -1,0 +1,11 @@
+max-visible=10
+layer=top
+font=RobotoMono Nerd Font
+background-color=#16161e
+text-color=#d8dee9
+border-color=#545c7e
+border-radius=0
+max-icon-size=48
+default-timeout=20000
+anchor=bottom-right
+margin=0

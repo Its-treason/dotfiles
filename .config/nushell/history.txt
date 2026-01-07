@@ -1,0 +1,1470 @@
+exit
+cd projects/
+git clone git@github.com:Pumpkin-MC/Pumpkin.git
+cd Pumpkin/
+exit
+cd projects/Pumpkin/
+cargo build --release
+rm -rf target/
+cargo build --release
+cd
+sudo pacman -S pcmanfm-qt6
+sudo pacman -S pcmanfm-qt
+pacman -Ss icon-theme
+ls /usr/share/icons/
+vim ~/.gtkrc-2.0
+sudo pacman --help
+sudo pacman -R pcmanfm-qt
+sudo pacman -S pcmanfm-gtk3
+sudo pacman -S obsidian
+sudo pacman -S discord
+hostname
+vim .config/hypr/hyprland.conf
+nvim
+vim .config/hypr/config/
+sudo pacman -S spotify-launcher
+sudo pacman -Suy
+sudo pacman -S spotify-launcher
+pipewire
+killall waybar
+waybar
+yadm add .config/waybar/
+yadm add .config/hypr/
+git status
+yadm status
+yadm add .config/alacritty/alacritty.toml##t .config/alacritty/themes .config/gtk-3.0/bookmarks .config/gtk-3.0/settings.ini .config/yadm/bootstrap
+yadm status
+yadm commit
+git config --global user.email "39559178+Its-treason@users.noreply.github.com"
+vim .config/hypr/config/input.conf
+cd .config/hypr/
+grep -Hirn "input" .
+git config --global user.name "Timon Schünemann"
+yadm commit
+ls
+yadm status
+yadm add .config/hypr/config/input.conf
+yadm commit
+yadm push
+waybar &
+^waybar &
+bash
+sudo pacman -S code
+sudo pacman -Syu
+sudo pacman -S code
+sudo pacman -S ansible ansible-core
+sudo pacman -S bluez blueman
+exit
+vim config/input.conf
+exit
+hyprpaper
+sudo pacman -S hyprpaper
+vim .config/hypr/config/autostart.conf
+vim ~/.config/hypr/hyprpaper.conf
+hyprpaper
+vim ~/.config/hypr/hyprpaper.conf
+hyprpaper
+vim ~/.config/hypr/hyprpaper.conf
+hyprpaper
+vim ~/.config/hypr/hyprpaper.conf
+ssh timon@timon-pc12
+exit
+cd projects/
+git clone git@github.com:Its-treason/ansible.git
+cd ansible/
+cat  README.md
+ansible-playbook -i inventory.yml -k playbook.yml --tags
+ansible-playbook -i inventory.yml -k playbook.yml --tags test
+cd ..
+git clone git@github.com:Its-treason/bruno.git
+node
+mise
+ssh timon@timon-pc12
+sudo pacman -Syu
+exit
+vim .config/hypr/config/variables.conf
+sudo pacman -Syu
+yay
+vim .config/hypr/config/keybinds.conf
+pcmanfm
+hyprpaper
+vim .config/hypr/hyprpaper.conf
+killall hyprpaper
+hyprpaper &
+hyprpaper
+bash 
+vim .config/hypr/config/defaults.conf
+ssh timon@timon-pc12
+exit
+sudo pacman -Syu
+sudo pacman -S neovim
+nvim
+ls .config/alacritty/themes/
+ls .config/alacritty/themes/themes/
+ls .config/alacritty/themes/themes/|grep tokyio
+ls .config/alacritty/themes/themes/|grep tokyo
+vim .config/alacritty/tokyo_night_storm.toml
+vim .config/alacritty/alacritty.toml
+vim .config/alacritty/tokyo_night_storm.toml
+vim .config/alacritty/tokyonight_night.toml
+rm .config/alacritty/tokyo_night_storm.toml
+vim .config/alacritty/alacritty.toml
+rm -rf .config/alacritty/themes/
+ls
+yadm .config/alacritty/alacritty.toml
+vim `.config/alacritty/alacritty.toml##t`
+yadm add .config/alacritty/tokyonight_night.toml
+gst
+vim ~/.config/nvim/init.lua
+mkdir .config/nvim
+vim ~/.config/nvim/init.lua
+mkdir .config/nvim/lua
+mkdir .config/nvim/lua/config
+mkdir .config/nvim/lua/plugins
+vim ~/.config/nvim/lua/config/lazy.lua
+nvim
+nvim .config/nvim/lua/plugins/colorschema.nvim
+nvim
+ls .config/nvim/lua/
+ls .config/nvim/lua/plugins/
+mv .config/nvim/lua/plugins/colorschema.nvim .config/nvim/lua/plugins/colorschema.lua
+nim
+nvim .config/nvim/lua/config/
+nvim
+nvim .config/nvim/lua/plugins/colorschema.lua
+nvim .config/nvim/lua/config/
+ls
+mv options.lua .config/nvim/lua/config/
+nvim .config/nvim/lua/config/remap.lua
+nvim .config/nvim/init.lua
+nvim
+exi
+exit
+nvim
+nvim  .config/nvim/lua/plugins/editor.lua
+nvim  .config/nvim/lua/plugins/format.lua
+nvim --version
+sudo pacman -S ripgrep
+sudo pacman -Q ripgrep
+sudo pacman -S ripgrep
+sudo pacman -Syu
+nvim  .config/nvim/lua/plugins/format.lua
+nvim  .config/nvim/lua/plugins/telescope.lua
+nvim
+nvim  .config/nvim/lua/plugins/format.lua
+nvim
+nvim  .config/nvim/lua/plugins/format.lua
+nvim
+cd .config/nvim/lua/
+ls
+ls config/
+mv config/remap.lua config/keymaps.lua
+vim ../init.lua
+nvim
+vim plugins/format.lua
+nvim plugins/format.lua
+nvim
+nvim plugins/treesiter.lua
+nvim  .config/nvim/lua/plugins/format.lua
+nvim plugins/neotree.lua
+nvim
+nvim plugins/statusline.lua
+nvim plugins/ui.lua
+nvim
+nvim
+nvim plugins/ui.lua
+nvim plugins/treesiter.lua
+nvim plugins/neotree.lua
+sudo pacman -Syu
+sudo pacman -S gimp
+sudo pacman -S libreoffice-still
+sudo pacman -S hypershot
+sudo pacman -S hyprshot
+hypershot --help
+hyprshot --help
+hyprshot --mode region --freeze --output-folder ~/Pictures/Screenshots
+cd
+nvim .config/hypr/config/keybinds.conf
+ssh timon@timon-pc12
+exit
+yadm add .config/nvim/lua/
+yadm add .config/nvim/lazy-lock.json
+yadm status
+yadm add .config/alacritty/
+yadm status
+ls .config/
+clear
+nvim .config/wofi/
+cd projects/
+ls
+mise
+node
+mise trust ~/mise.toml
+mise settings add idiomatic_version_file_enable_tools node
+mise trust ~/mise.toml
+cd
+mise trust mise.toml
+exit
+npm -v
+node
+mise use
+mise --help
+mise help
+mise use -g node@22
+ls
+node -v
+mise use -g node@22
+mise doctor
+rm .nvmrc
+ls
+mise doctor
+node -v
+npm -v
+npm i -g pnpm
+pnpm -v
+pnpm i
+gco fs-rewrite
+ggl
+pnpm i
+pnpm run dev
+pnpm run build
+pnpm run electron
+cd
+cd .config/waybar/
+fc-list
+fc-list|grep roboto
+fc-list|grep nf
+fc-list|grep Roboto
+killall waybar;
+waybar
+waybar -l debug
+sudo pacman -Syu
+waybar -l debug
+pnpm run dev
+nvim .
+exi
+exit
+ls .config/
+dunst
+cd .config/waybar/
+nvim .
+cd ../hypr/
+neofetc
+fastfetch
+cd projects/Pumpkin/
+rm -rf target/
+cargo build --release
+rm -rf target/
+sudo pacman -Syu
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+/bin/bash
+systemctl reboot
+nvim .config/waybar/
+cd .config/wayar
+cd .config/waybar
+killall waybar;
+waybar -l debug
+nvim .
+waybar -l debug
+vim .config/hypr/hyprpaper.conf
+killall hyprpaper
+vim .config/hypr/hyprpaper.conf
+bash
+exit
+waybar -l debug
+bash
+exit
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+bash
+cd .config/dunst/
+dunstd --help
+bash
+nvim .config/hypr/
+ls .config/mako/
+rm -rf .config/dunst/
+gst
+yadm add .config/mako/
+yadm stattus
+yadm status
+nvim .
+:q
+killall mako
+hyprctl notify -1 10000 "0" "Hello everyone!"
+nvim .config/mako/config
+nvim
+bash
+exit
+exit
+cd projects/
+git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+cd auto-cpufreq/
+sudo pacman -Syu
+sudo ./auto-cpufreq-installer
+aut0-cpufreq --help
+auto-cpufreq
+auto-cpufreq --help
+auto-cpufreq --install
+sudo auto-cpufreq --install
+sudo auto-cpufreq --stats
+exit
+exit
+config nu
+nvim .config/nushell/env.nu
+exit
+config nu
+config env
+config banner
+cd .config/nushell/
+exit
+nu
+exit
+clear
+print
+print "hello"
+print("hello")
+nvim .
+exit
+nvim .config/nushell/config.nu
+exit
+ssh timon@timon-pc12
+nmtui
+ssh pi@timon-pi4
+resolvectl flush-caches
+ssh pi@timon-pi4
+nmtui
+ssh pi@timon-pi4
+cat .ssh/known_hosts
+cat .ssh/known_hosts.old
+ssh pi@timon-pi4
+sudo pacman -Syu
+ssh pi@timon-pi4
+ssh timon@192.168.178.104
+sudo pacman -Syu
+ssh timon@timon-pc12
+nmtui
+dig timon-pc12
+ssh pi@timon-pi4
+ssh pi@192.168.178.54
+sudo pacman -Syu
+cd .config/hypr/
+nvim .
+sudo pacman -Syu
+ssh pi@timon-pi4
+nsloopup
+ip -br a
+ip a
+ip --help
+ip -r timon-pi4 --verbose
+ip -r timon-pi4
+resolvectl status
+host fritz.box
+dig --verbose fritz.box
+dig fritz.box
+nslookup fritz.box
+nslookup fritz.box 192.168.178.1
+sudo systemd-resolve --flush-caches
+nslookup fritz.box
+nslookup fritz.box 192.168.178.1
+resolvectl status
+sudo vim /etc/systemd/resolved.conf
+sudo systemctl restart systemd-resolved
+dig fritz.box
+nslookup fritz.box
+resolvectl query fritz.box
+sudo vim /etc/systemd/resolved.conf
+sudo systemctl restart systemd-resolved
+resolvectl query fritz.box
+nslookup fritz.box
+sudo vim /etc/systemd/resolved.conf
+sudo systemctl restart systemd-resolved
+nslookup fritz.box
+resolvectl dns wlan0 192.168.178.1
+resolvectl domain wlan0 fritz.box
+nslookup fritz.box
+journalctl -u systemd-resolved -n 20
+resolvectl status wlan0
+resolvectl query fritz.box
+resolvectl query fritz.box --type=A
+sudo systemctl restart systemd-resolved
+resolvectl query fritz.box
+sudo systemctl restart systemd-resolved
+sudo vim /etc/systemd/resolved.conf
+sudo systemctl restart systemd-resolved
+nslookup fritz.box
+sudo systemctl restart systemd-resolved
+nslookup fritz.box
+sudo systemctl restart systemd-resolved
+nslookup fritz.box
+ssh pi@timon-pi4
+ansible-playbook -i inventory.yml -k playbook.yml --tags paperless
+ansible-playbook -i inventory.yml playbook.yml --tags paperless
+ansible-playbook -i inventory.yml playbook.yml --tags nextcloud
+ansible-playbook -i inventory.yml playbook.yml --tags traefik
+gaa
+gst
+gc
+ggp
+nmtui
+exit
+sudo vim /etc/systemd/resolved.conf
+sudo pacman -Syu
+cd projects/Pumpkin/
+ggl
+rm -rf target/
+cargo build --release
+fastfetch
+yadm status
+notify-send --hep
+notify-send --help
+notify-send "Hello World" lol
+sudo pacman -Syu
+cd projects/Pumpkin/
+ggl
+rm -rf target/
+cargo build --release
+gst
+cd projects/
+ls
+mkdir xrandr-test
+cd xrandr-test/
+cargo init
+ls
+cargo add x11 anyhow tracing 
+cargo add x11rb
+cargo install
+ls
+cargo check
+rustu
+rustup
+rustup show
+rustup install rls
+rustup component add rls
+rustc
+cargo run 
+sudo pacman -Syu
+ssh timon@timon-pc12
+sudo pacman -Syu
+gs
+gst
+ansible-playbook -i inventory.yml playbook.yml --tags firefly
+ssh timon@timon-pc12
+ssh pi@timon-pi4
+sudo pacman -Syu
+ssh pi@timon-pi4
+gaa
+gst
+gc
+ansible-playbook -i inventory.yml playbook.yml --tags jellyfin
+gaa
+gc -m "update jellyfin path"
+ggp
+ssh timon@timon-pc12
+ssh timon@timon-pc12
+sudo pacman -Syu
+sshi
+ssh timon@timon-pc12
+sudo pacman -Syu
+ssh timon@timon-pc12
+cd Downloads/
+ls
+^ls
+^ls -lah
+gpg -d openpgp-encrypted-message.asc
+gpg --import noname.pgp
+head noname.pgp
+cat noname.pgp
+cat openpgp-encrypted-message.asc
+ping 8.8.8.8
+ssh timon@timon-pc12
+sudo pacman -Syu
+ssh timon@timon-pc12
+cd projects/
+mkdir static-next-site-test
+npx
+node 0v
+node -v
+pnpm
+sudo pacman -S bun
+bun
+exit
+npx create-next-app@latest my-app
+emdir static-next-site-test/
+rmdir static-next-site-test/
+mv my-app/ static-next-app-test
+cd static-next-app-test/
+ls
+rm node_modules/ package-lock.json
+rm -rf node_modules/ package-lock.json
+bun install
+bun add --help
+bun add @mantine/core @mantine/hooks
+bun add @next/mdx @mdx-js/loader @mdx-js/react
+bun add -d postcss postcss-preset-mantine postcss-simple-vars
+bun run dev
+sudo pacman -S bun
+sudo pacman -Syu
+ssh timon@timon-pc12
+sudo pacman -Syu
+bun run dev
+sudo pacman -Syu
+ssh timon@timon-pc12
+sudo pacman -Syu
+bash
+bun
+cd ..
+bun create ripper-scripts
+bun init 
+ls
+rm -rf README.md bun.lock index.ts node_modules/ tsconfig.json
+bun
+bun init ripper-scripts
+ls
+cd ripper-scripts/
+ls
+cat index.ts
+bun add cli-cursor cli-spinner enquirer
+bun add figures
+bun add zod
+scp timon@timon-pc12:/home/timon/out-test out-test
+cat out-test
+bun run start
+bun index.ts
+bun add -d cli-spinners
+bun add -d @types/cli-spinners
+bun add -d @types/cli-spinner
+bun index.ts
+bun src/index.ts
+bash
+npm
+bun src/index.ts
+sudo pacman -Syu
+bun src/index.ts
+bun add ansi-colors
+bun src/index.ts
+ssh timon@timon-pc12
+vim .config/hypr/config/keybinds.conf
+ssh timon@timon-pc12
+scp timon@timon-pc12:/home/timon/out-test out-test2
+bun src/index.ts
+scp timon@timon-pc12:/home/timon/out-test out-test2
+bun src/index.ts
+scp timon@timon-pc12:/home/timon/out-test out-test2
+bun src/index.ts
+ping 8.8.8.8
+bun src/index.ts
+mkdir out
+bun build ./src/index.tsx --outdir ./out --minify
+bun build ./src/index.ts --outdir ./out --minify
+bun build ./src/index.ts --outdir ./out --minify --target bun
+scp ./out/index.js timon@timon-pc12:/home/timon/ripper
+bun build ./src/index.ts --outdir ./out --minify --target bun; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+bun src/index.ts
+bun build ./src/index.ts --outdir ./out --minify --target bun; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+ssh timon@timon-pc12
+sudo pacman -Syu
+ssh timon@timon-pc12
+exit
+bun build ./src/index.ts --outdir ./out --minify --target bun; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+scp timon@timon-pc12:/home/timon/out-test out-test3
+git status
+bun dev
+bun build ./src/index.ts --outdir ./out --minify --target bun; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+bun dev
+bun build ./src/index.ts --outdir ./out --minify --target bun; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+bun dev
+bun build ./src/index.ts --outdir ./out --minify --target bun; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+bun dev
+bun build ./src/index.ts --outdir ./out --minify --target bun; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+sudo pacman -Syu
+ssh timon@timon-pc12
+bun build ./src/index.ts --outdir ./out --minify --target bun; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+scp timon@timon-pc12:/home/timon/out-test out-test-invalid-main-feature
+bun build ./src/index.ts --outdir ./out --minify --target bun; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+bun test
+git status
+git init .
+git add .
+git status
+bun add -D -E @biomejs/biome
+bunx --bun biome init
+bunx --bun biome check
+bunx --bun biome check --write
+gaa
+gst
+git commit -m "initial commit"
+git remote add origin git@github.com:Its-treason/ripper-scripts.git
+ggp
+ssh timon@timon-pc12
+sudo pacman -Syu
+bun build ./src/index.ts --outdir ./out --minify --target bun; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+bun build; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+bun run build; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+git restore sr
+git restore src
+gst
+bun run dev
+bun outdated
+bun outdated --help
+bun outdated
+bun outdated --save
+bun 
+bun upgrade
+bun update
+bun update --help
+bun update --latest
+sudo pacman -Syu
+bun update --latest
+cd Downloads/
+unzip code.talks_1.0.0_APKPure.apk -d talksapk
+cd talksapk/
+head classes.dex
+strings
+strings classes.dex
+strings classes.dex|grep community
+ls
+grep -Hirn "Community" .
+grep -Hirn "community" .
+grep -Hirn "api" .
+curl 	https://events.codetalks.com/api/graphql
+sudo pacman -S yay
+yay
+yay --help
+yay bruno-bin
+bun scrape.js
+bash
+sudo pacman -Syu
+sudo pacman -S monero-gui
+keepassxc
+sudo pacman -S botan
+keepassxc
+sudo pacman -S keepassxc
+keepassxc
+pacman -Qi botan
+sudo pacman -S keepassxc
+sudo pacman -S botan
+sudo pacman -Syu
+sudo pacman -S keepassxc-2.7.10-4
+sudo pacman -S keepassxc-2.7.10-5
+ysy
+sudo ysy
+sudo yay
+sudo pacman -U file:///var/cache/pacman/pkg/keepassxc-2.7.10-5.pkg.tar.zst
+sudo pacman -U file:///var/cache/pacman/pkg/keepassxc-2.7.10-4.pkg.tar.zst
+ls /var/cache/pacman/pkg/
+ls /var/cache/pacman/pkg/|grep "keepass"
+sudo pacman -U file:///var/cache/pacman/pkg/keepassxc-2.7.10-4-x86_64.pkg.tar.zst
+keepassxc
+bun run build; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+gaa
+gst
+gc
+ggp
+bun run build; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+gaa
+gst
+gcp
+gc
+ggp
+gst
+git add .nvmrc
+gst
+gcp
+gc
+sudo chmod +x .husky/pre-commit
+gst
+gaa
+gst
+gc
+gco main
+ggl
+node -v
+mise install
+mise use
+node -v
+pnpm -v
+npm i -g pnpm
+pnpm i
+gco lazer
+node -v
+pnpm i
+gst
+pnpm run electron
+pnpm run dev
+pnpm --help
+cd packages/bruno-app/
+pnpm up --help
+pnpm up -i
+gst
+cd ../bruno-core
+pnpm up -i
+cd ../bruno-electron/
+pnpm up -i
+cd ..
+pnpm i
+gst
+pnpm run electron
+rm /home/timon/.config/bruno-lazer/preferences.json
+pnpm run electron
+git add .
+gst
+gc
+sudo chmod +x .husky/pre-commit
+pnpm run dev
+ggl
+ggp
+cd packages/bruno-app/
+pnpm up -i
+cd ../../
+pnpm run dev
+pnpm i
+pnpm run dev
+pnpm run electron
+pnpm i
+pnpm run dev
+git restore .
+gst
+ggp
+ssh timon@timon-pc12
+sudo pacman -Syu
+ssh-copy-id timon@timon-pc12
+sudo pacman -Syu
+ysy --help
+yay --help
+yay -U
+sudo yay
+sudo yay -Syu
+sudo pacman -Syu
+sudo yay
+sudo yay -Syu
+sudo yay -Syu --aur
+yay -Syu --aur
+yay
+exit
+ssh timon@timon-pc12
+git add .
+gst
+gc
+ggp
+vim .config/electron-flags.conf 
+gst
+ggp
+ggl
+pnpm run electron
+pnpm run dev
+pnpm i
+pnpm run dev
+cd projects/
+git clone git@github.com:usebruno/bruno.git bruno-upstream
+pnpm run electron
+yay
+yay -Syu --aur
+pnpm run electron
+git add .
+git status
+git commit 
+ggp
+gco fs-rewrite
+gst
+gm main
+gs
+gst
+git merge --abort
+gm lazer
+gst
+rm pnpm-lock.yaml
+gst
+git add .
+gst
+pnpm i
+pnpm run electron
+git add .
+gst
+git commit
+ggp
+pnpm run dev
+yay
+ssh timon@timon-pc12
+ansible-playbook -i inventory.yml playbook.yml --tags jellyfin
+gaa
+gst
+gc
+ggp
+yay
+sudo pacman -S go
+go
+cd projects/
+go generate
+go
+go init
+go 
+mkdir ripper-go
+cd ripper-go/
+go mod init its-treason/ripper
+go run main.go
+go build
+rm ripper
+go build
+./ripper
+ssh timon@timon-pc12
+ansible-playbook -i inventory.yml playbook.yml --tags metricbeat
+man kill
+bun run build; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+gst
+rm ripper
+go run main.go
+ssh timon@timon-pc12
+ssh pi@timon-pi4
+gofmt
+go run main.go
+man nm
+go get github.com/goforj/godump
+go get github.com/charmbracelet/log@latest
+go
+go install
+yay
+go run main.go
+yay
+sudo pacman -S libdvdread
+go 
+go buid
+go build
+go buid
+go build
+./ripper
+go build
+./ripper
+scp ./ripper timon@timon-pc12:/home/timon/gorip
+go build
+./ripper
+go build
+./ripper
+scp ./ripper timon@timon-pc12:/home/timon/gorip
+fastfetch
+GOAMD64=v1 go build
+scp ./ripper timon@timon-pc12:/home/timon/gorip
+GOAMD64=v1 go build
+scp ./ripper timon@timon-pc12:/home/timon/gorip
+GOAMD64=v1 CGO_CFLAGS="-march=x86-64" go build
+scp ./ripper timon@timon-pc12:/home/timon/gorip
+docker
+sudo pacman -S docker docker-buildx docker-compose
+docker --version
+docker compose --version
+docker run --help
+docker run --rm -it -v ".:/app" -w "/app" golang:1.25.4:bookworm go build
+docker run --rm -v ".:/app" -w "/app" -it golang:1.25.4:bookworm go build
+docker run -v ".:/app" -w "/app" -it golang:1.25.4:bookworm go build
+docker run -v ".:/app" -w "/app" -it golang:1.25.4:bookworm
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm go build
+sudo systemctl start dockerd
+exit
+ssh timon@timon-pc12
+exit
+exit
+yya
+yay
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm go build
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod
+sudo usermod -aG docker timon
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm go build
+sudo usermod -aG timon docker
+guid
+cat /etc/passwd
+cat /etc/group
+docker info
+docker run --rm ubuntu:latest
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm go build
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm apt update && apt install libdvdread-dev ^^ go build
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm apt update && apt install libdvdread-dev && go build
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm "apt update && apt install libdvdread-dev && go build"
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm apt update "&&" apt install libdvdread-dev "&&" go build
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm apt update \&& apt install libdvdread-dev \&& go build
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm apt update \\&& apt install libdvdread-dev \&& go build
+ls
+./ripper
+scp ./ripper timon@timon-pc12:/home/timon/gorip
+ssh timon@timon-pc12
+./ripper
+scp ./ripper timon@timon-pc12:/home/timon/gorip
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm apt update \\&& apt install libdvdread-dev \&& go build
+scp ./ripper timon@timon-pc12:/home/timon/gorip
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm bash
+go bild
+go build
+ssh timon@timon-pc12
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-bookworm bash
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-trixi bash
+go build
+./ripper
+go build
+./gorip
+docker run -v ".:/app" -w "/app" -it golang:1.25.4-trixie bash
+pacman --help
+docker run -v ".:/app" -w "/app" -it archlinux bash
+go build
+scp ./gorip timon@timon-pc12:/home/timon/gorip
+GOAMD64=v1 CGO_CFLAGS="-march=x86-64" go build
+scp ./gorip timon@timon-pc12:/home/timon/gorip
+scp ./ripper timon@timon-pc12:/home/timon/gorip
+scp ./gorip timon@timon-pc12:/home/timon/gorip
+docker run --help
+scp ./gorip timon@timon-pc12:/home/timon/gorip
+ssh timon@timon-pc12
+ssh timon@timon-pc12
+cd projects/ripper-go/
+ls
+./gorip
+yay
+sudo pacman -S handbrake
+sudo pacman -S handbrake-cli
+Handbrake-CLI
+HandbrakeCl
+HandbrakeCLI
+HandbrakeCli
+Handbrakecli
+Handbrake
+HandBrakeCLI
+HandBrakeCLI  -i /dev/sr0 --title 0
+sudo pacman -S ilbaacs libdbplus libbluray
+sudo pacman -S libaacs 
+sudo pacman -S libbdplus
+HandBrakeCLI  -i /dev/sr0 --title 0
+sudo bd_info /dev/sr0
+unzip ./Downloads/keydb_eng.zip ./.config/
+unzip ./Downloads/keydb_eng.zip 
+sudo bd_info /dev/sr0
+ls .config/aacs/
+sudo bd_info /dev/sr0
+head .config/aacs/KEYDB.cfg
+aacs
+~/.config/aacs/
+ls
+cat KEYDB.cfg
+sudo bd_info /dev/sr0
+bd_info /dev/sr0
+sudo pacman -S jre11-openjdk
+java
+bd_info /dev/sr0
+HandBrakeCLI  -i /dev/sr0 --title 0
+ssh timon@timon-pc12
+exit
+bd_info /dev/sr0
+HandBrakeCLI  -i /dev/sr0 --title 0
+ls .config/aacs/
+cat /dv/sr0
+yay
+ssh timon@timon-pc12
+head /dev/sr0
+HandBrakeCLI -i /dev/sr0 --title 1 --encoder x264 --encoder-preset fast --quality 21 --optimize -o ./Downloads/iceage
+sudo pacman -S baka-mplayer
+HandBrakeCLI -i /dev/sr0 --title 1 --encoder x264 --encoder-preset fast --quality 21 --optimize -o ./Downloads/iceage.mkv
+sudo pacman -R baka-mplayer
+bun run build; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+sudo pacman -R baka-mplayer
+HandBrakeCLI  -i /dev/sr0 --title 0
+bd_info /dev/sr0
+HandBrakeCLI  -i /dev/sr0 --title 0
+gaa
+gst
+rm ffi-test.js
+gst
+gaa
+gst
+gc
+ggp
+HandBrakeCLI -i /dev/sr0 --title 2 --encoder x264 --encoder-preset slower --quality 18 --optimize --all-audio --all-subtitles --encoder-tune film -o ./Downloads/Doctor Who S11E09.mkv
+htop
+top
+HandBrakeCLI -i /dev/sr0 --title 2 --encoder x264 --encoder-preset slower --quality 18 --optimize --all-audio --all-subtitles --encoder-tune film -o "./Downloads/Doctor Who S11E09.mkv"
+ssh timon@timon-pc12
+sudo mount -t cifs -o username=timon //timon-pc12/Videos ./Downloads/Videos
+dig timon-pc12
+sudo mount -t cifs -o username=timon //192.186.178.49/Videos ./Downloads/Videos
+HandBrakeCLI -i /dev/sr0 --title 2 --encoder x264 --encoder-preset slower --quality 22 --optimize --all-audio --all-subtitles --encoder-tune film -o "./Downloads/Doctor Who S11E0922.mkv"
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld //192.186.178.49/Videos ./Downloads/Videos
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld //192.186.178.104/Videos ./Downloads/Videos
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld //192.168.178.104/Videos ./Downloads/Videos
+cd Downloads/
+ls
+ffmpeg
+ffmpeg -ss 00:00:03 -i `Doctor Who S11E0919.mkv` -vframes 1 frame_1_18.png
+ffmpeg -ss 00:00:23 -i `Doctor Who S11E0919.mkv` -vframes 1 frame_2_18.png
+ffmpeg -ss 00:00:23 -i `Doctor Who S11E0918.mkv` -vframes 1 frame_2_18.png
+ffmpeg -ss 00:01:10 -i `Doctor Who S11E0918.mkv` -vframes 1 frame_3_18.png
+ffmpeg -ss 00:00:23 -i `Doctor Who S11E0920.mkv` -vframes 1 frame_2_20.png
+HandBrakeCLI -i /dev/sr0 --title 2 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o "./Downloads/Doctor Who S11E0920.mkv"
+ffmpeg -ss 00:00:23 -i `Doctor Who S11E0922.mkv` -vframes 1 frame_2_22.png
+ffmpeg -ss 00:01:10 -i `Doctor Who S11E0920.mkv` -vframes 1 frame_3_20.png
+ffmpeg -ss 00:01:10 -i `Doctor Who S11E0922.mkv` -vframes 1 frame_3_22.png
+ffmpeg -ss 00:00:03 -i `Doctor Who S11E0920.mkv` -vframes 1 frame_1_20.png
+ffmpeg -ss 00:00:03 -i `Doctor Who S11E0922.mkv` -vframes 1 frame_1_22.png
+sudo cp frame* Videos/
+sudo cp `Doctor Who S11E09*.mkv` Videos/
+sudo umount ./Videos/
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld,uid=1000 //192.168.178.104/Videos ./Downloads/Videos
+ls Videos/
+HandBrakeCLI -i /dev/sr0 --title 3 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o "./Downloads/Doctor Who S11E0920.mkv"
+ssh timon@timon-pc12
+sleep 
+sleep --help
+sleep 1hr; systemctl suspend;
+bun run build; scp ./out/index.js timon@timon-pc12:/home/timon/ripper;
+sudo umount ./Downloads/Videos/
+rmdir Downloads/
+rmdir Downloads/Videos/
+sudo rmdir Downloads/Videos/
+sudo rmdir Downloads/
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld,uid=1000 //192.168.178.104/Videos ~/Downloads/Videos
+HandBrakeCLI  -i /dev/sr0 --title 0
+HandBrakeCLI -i /dev/sr0 --title 5 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o `./Downloads/Videos/Shows/Doctor Who (2005)/Season 11/Doctor Who S11E08`
+HandBrakeCLI -i /dev/sr0 --title 5 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o `./Downloads/Videos/Shows/Doctor Who (2005)/Season 11/Doctor Who S11E08.mkv`
+cd `Videos/Shows/Doctor Who (2005)/`
+cd `Season 11/`
+ls
+ffmpeg -i `Doctor Who S11E09.mkv`
+ffmpeg -i input.file 2>&1 | grep "Stream #0:1"
+HandBrakeCLI -i /dev/sr0 --title 4 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o `./Downloads/Videos/Shows/Doctor Who (2005)/Season 11/Doctor Who S11E07.mkv`
+HandBrakeCLI -i /dev/sr0 --title 3 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o `./Downloads/Videos/Shows/Doctor Who (2005)/Season 11/Doctor Who S11E06.mkv`
+HandBrakeCLI -i /dev/sr0 --title 2 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o `./Downloads/Videos/Shows/Doctor Who (2005)/Season 11/Doctor Who S11E05.mkv`
+go build
+yay
+sudo pacman -S libbluray
+ls /usr/include/
+cd /usr/include/
+ls|grep bluray
+cd libbluray/
+ls
+head bluray.h
+vim bluray.h
+pwd
+ls ../dvdnav/
+ls ..|grep Hand
+ls ..|grep hand
+cd ..
+ls |grep hand
+bd_info
+bd_info /dev/sr0
+go add 
+go install github.com/charmbracelet/huh
+go get github.com/charmbracelet/log@latest
+go get github.com/alecthomas/kong
+go run main.go
+ls
+go run main.go
+go run 
+go run *.go
+go build
+./gorip
+./gorip bd-info
+go run *.go
+go run *.go -- bd-info
+cd
+ls .config/aacs
+go run *.go -- bd-info
+bd_info /dev/sr0
+nmtui
+go run *.go -- bd-info
+bd_info /dev/sr0
+go run *.go -- bd-info
+mv .config/aacs/KEYDB.cfg .config/aacs/KEYDB.cfg.bak
+docker ps
+mv .config/aacs/KEYDB.cfg.bak .config/aacs/KEYDB.cfg
+go run *.go -- bd-info
+go build
+./gorip bd-info
+go build
+./gorip bd-info
+bd_info
+bd_info /dev/sr0
+go run *.go -- bd-info --json
+go build
+./gorip bd-info --json
+go build
+./gorip bd-info --json
+go build; ./gorip bd-info --json
+go run *.go -- bd-info
+yay
+ssh timon@timon-pc12
+bd_info /dev/sr0
+go run *.go -- bd-info
+yay
+go run *.go -- bd-info
+bd_list_titles
+bd_list_titles /dev/sr0
+bd_list_titles /dev/sr0 -h
+bd_list_titles /dev/sr0 -a
+bd_list_titles /dev/ -a
+go run *.go -- bd-info /dev
+ls /dev/
+head /dev/sr0
+go run *.go -- bd-titles /dev/sr0
+go build
+go build 
+./gorip bd-titles --json
+go build 
+./gorip bd-titles --json
+bd_list_titles /dev/sr0 -a
+go build 
+./gorip bd-titles --json
+go run *.go -- bd-titles /dev/sr0
+bd_list_titles /dev/sr0 -s 10
+go run *.go -- bd-titles /dev/sr0
+go build
+./gorip bd-titles --json
+go run *.go -- bd-titles /dev/sr0
+go build
+./gorip bd-titles --json
+go build
+./gorip bd-titles --json
+./gorip bd-read
+go run *.go -- bd-read
+rm out.mp4
+go run *.go -- bd-read
+lscpi
+lscpu
+go run *.go -- bd-read
+ls 
+rm out.mp4
+go build
+./gorip bd-read
+rm out.mp4
+go build
+./gorip bd-read
+ls
+go get -u github.com/u2takey/ffmpeg-go
+go build
+ffprobe -hide-banner out.mp4
+ffprobe --hide-banner out.mp4
+ffprobe out.mp4
+ffprobe --of json out.mp4
+ffprobe -of json out.mp4
+go build
+./gorip transpile ./out.mp4 ./trans.mkv
+htop
+top
+./gorip transcode ./out.mp4 ./trans.mkv
+rm transcode.go
+go build
+./gorip transcode ./out.mp4 ./trans.mkv
+go build
+./gorip transcode ./out.mp4 ./trans.mkv
+ls
+rm trans.mkv
+./gorip transcode ./out.mp4 ./trans.mkv
+rm trans.mkv
+go build
+./gorip transcode ./out.mp4 ./trans.mkv
+go buiild
+go build
+./gorip transcode ./out.mp4 ./trans.mkv
+man ffmpeg
+ffmpeg --help
+go build
+./gorip transcode ./out.mp4 ./trans.mkv
+rm trans.mkv
+./gorip transcode ./out.mp4 ./trans.mkv
+go build
+./gorip transcode ./out.mp4 ./trans2.mkv
+./gorip transcode ./out.mp4 ./trans3.mkv
+go build
+./gorip transcode ./out.mp4 ./trans3.mkv
+go build
+./gorip transcode ./out.mp4 ./trans3.mkv
+ffmpeg -codecs
+ffmpeg -codecs|grep opus
+go run *.go -- transcode ./out.mp4 ./trans3.mkv
+ffmpeg -h muxer=matroska
+ffmpeg -hide_banner -codecs | grep DEA
+go run *.go -- transcode ./out.mp4 ./trans3.mkv
+cd Downloads/
+ls
+cd ../projects/ripper-go/
+ls
+ffprobe -v error -select_streams a:0 -show_entries stream=bit_rate -of default=noprint_wrappers=1:nokey=1 trans3.mkv
+ffprobe -v error -select_streams a:1 -show_entries stream=bit_rate -of default=noprint_wrappers=1:nokey=1 trans3.mkv
+ffprobe -v error -select_streams a:1 -show_entries stream=bit_rate -of default=noprint_wrappers=1:nokey=1 trans.mkv
+ffprobe -v error -select_streams a:1 -show_entries stream=bit_rate -of default=noprint_wrappers=1:nokey=1 out.mp4
+ffprobe -v error -select_streams a:0 -show_entries stream=bit_rate -of default=noprint_wrappers=1:nokey=1 out.mp4
+ffprobe -of json out.mp4
+ffprobe -of json trans3.mkv
+go run *.go -- transcode ./out.mp4 ./trans4.mkv
+ffprobe -of json trans4.mkv
+ls -l
+ls -la
+ls 
+ls --help
+^ls -lah
+^ls -la
+go run *.go -- transcode ./out.mp4 ./trans5.mkv
+ffprobe -of json trans5.mkv
+cd
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld,uid=1000 //192.168.178.104/Videos ~/Downloads/Videos
+curl http://jellyfin.its-treason.com/.well-known/
+curl http://jellyfin.its-treason.com/.well-known/test
+ssh timon@timon-pc12
+ansible-playbook -i inventory.yml playbook.yml --tags traefik 
+ansible-playbook -i inventory.yml playbook.yml --tags traefik,jellyfin
+ansible-playbook -i inventory.yml playbook.yml --tags traefik
+ansible-playbook -i inventory.yml playbook.yml --tags jellyfin
+gaa
+gst
+gc
+git push
+ssh pi@timon-pi4
+ssh pi@timon-pi4
+ssh timon@timon-pc12
+exit
+cd Downloads/Videos/
+cd `Shows/Doctor Who (2005)/Season 11/`
+ls
+ffprobe -of `./Doctor Who S11E04.mkv`
+ffprobe `./Doctor Who S11E04.mkv`
+ffprobe `./Doctor Who S11E05.mkv`
+ffprobe `./Doctor Who S11E04.mkv`
+htop
+killall pcman
+ffprobe `./Doctor Who S11E05.mkv`
+go run *.go -- transcode ./out.mp4 ./trans6.mkv
+ffprobe `./Doctor Who S11E04.mkv`
+vim `Doctor Who S11E04.mkv`
+file `Doctor Who S11E04.mkv`
+ffprobe `./Doctor Who S11E05.mkv`
+ffprobe `./Doctor Who S11E04.mkv`
+ffprobe trans2.mkv
+go run *.go -- transcode ./trans2.mkv ./trans7.mkv
+ffprobe trans7.mkv
+go run *.go -- transcode ./trans2.mkv ./trans7.mkv
+ffprobe trans7.mkv
+rm trans7.mkv
+ls
+bd_info /dev/sr0
+HandBrakeCLI  -i /dev/sr0 --title 0
+go run *.go -- transcode ./trans2.mkv `~/Downloads/Videos/Shows/Doctor Who (2005)/Season 11/Doctor Who S11E04.mkv`
+ssh timon@timon-pc12
+ffprobe `Doctor Who S11E04.mkv`
+man ffmpeg
+HandBrakeCLI -i /dev/sr0 --title 2 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o `./Downloads/Videos/Shows/Doctor Who (2005)/Season 12/Doctor Who S12E01.mkv`
+ssh timon@timon-pc12
+ffprobe `Doctor Who S11E04.mkv`
+ls
+HandBrakeCLI -i /dev/sr0 --title 3 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o `./Downloads/Videos/Shows/Doctor Who (2005)/Season 12/Doctor Who S12E02.mkv`
+ssh timon@timon-pc12
+HandBrakeCLI -i /dev/sr0 --title 4 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o `./Downloads/Videos/Shows/Doctor Who (2005)/Season 12/Doctor Who S12E03.mkv`
+HandBrakeCLI  -i /dev/sr0 --title 0
+go run *.go -- bd-titles /dev/sr0
+HandBrakeCLI  -i /dev/sr0 --title 0
+go run *.go -- bd-titles /dev/sr0
+HandBrakeCLI -i /dev/sr0 --title 2 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o `./Downloads/Videos/Shows/Doctor Who (2005)/Season 12/Doctor Who S12E04.mkv`
+go run *.go -- bd-titles /dev/sr0
+HandBrakeCLI  -i /dev/sr0 --title 0
+HandBrakeCLI -i /dev/sr0 --title 1 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o `./Downloads/Videos/babydriver.mkv`
+ffprobe 'Baby Driver [tmdbid-339403].mkv'
+git merge lazer
+ggl
+yay
+HandBrakeCLI  -i /dev/sr0 --title 0
+bd_info /dev/sr0
+bd_list_titles /dev/sr0
+bd_list_titles --help
+bd_list_titles -a /dev/sr0
+go run *.go -- bd-titles /dev/sr0
+HandBrakeCLI  -i /dev/sr0 --title 0
+bd_list_titles -a /dev/sr0
+go run *.go -- bd-read 
+docker
+docker ps
+docker run -it --rm -p "8096:8098" jellyfin/jellyfin:latest
+docker run -it --rm -p "8096:8096" jellyfin/jellyfin:latest
+docker run -it --rm -p "8096:8096" jellyfin/jellyfin:2025120105
+nmtui
+ansible-playbook -i inventory.yml playbook.yml --tags pi-hole
+dig jellyfin.its-treason.com
+dig --help
+dig -h
+dig jellyfin.its-treason.com
+ping jellyfin.its-treason.com
+nslookup jellyfin.its-treason.com 192.168.178.1
+nslookup jellyfin.its-treason.com 192.168.178.54
+nslookup jellyfin.its-treason.com 192.168.178.1
+nslookup jellyfin.its-treason.com 192.168.178.54
+nslookup jellyfin.its-treason.com 192.168.178.1
+nslookup jellyfin.its-treason.com 8.8.8.8
+nslookup jellyfin.its-treason.com 192.168.178.1
+nslookup jellyfin.its-treason.com 192.168.178.54
+ssh pi@timon-pi4
+dig jellyfin.its-treason.com
+nslookup jellyfin.its-treason.com 192.168.178.54
+nslookup jellyfin.its-treason.com 192.168.178.1
+nslookup jellyfin.its-treason.com 192.168.178.54
+nslookup jellyfin.its-treason.com 192.168.178.1
+nslookup jellyfin.its-treason.com 192.168.178.54
+nslookup jelly.local 192.168.178.54
+nslookup jelly.local 192.168.178.1
+nslookup jelly.local 192.168.178.54
+nslookup jelly.local 192.168.178.1
+nslookup jelly.local 192.168.178.54
+nslookup test.local 192.168.178.54
+curl test.local
+curl -vvv test.local
+nslookup test.local 192.168.178.54
+nslookup test.local 192.168.178.1
+nslookup jelly.local 192.168.178.1
+nslookup jellyfin.its-treason.com 192.168.178.1
+ssh pi@timon-pi4
+gst
+gaa
+gst
+gc
+gaa
+gst
+ansible-playbook -i inventory.yml playbook.yml --tags jellyfin
+gaa
+gst
+gc
+git psuh
+git push
+go run *.go -- bd-titles /dev/sr0
+go build
+go run *.go -- bd-info /dev/sr0
+man ffmpeg
+ffprobe out.mp4
+go run *.go -- bd-titles /dev/sr0
+HandBrakeCLI  -i /dev/sr0 --title 0
+cd projects/
+ls
+mv bruno bruno-lazer
+gs
+gst
+git clone git@github.com:usebruno/bruno.git
+yay
+sudo su
+yay
+cd bruno
+ls
+gst
+ls -a
+rm .vscode
+ssh timon@timon-pc12
+ssh pi@timon-pi4
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld,uid=1000 //192.168.178.104/Videos ~/Downloads/Videos
+cd
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld,uid=1000 //192.168.178.104/Videos ./Downloads/Videos
+sudo mount -t cifs -o username=timon //192.186.178.49/Videos ./Downloads/Videos
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld //192.168.178.104/Videos ./Downloads/Videos
+yay
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld //192.168.178.104/Videos ./Downloads/Videos
+bun run build
+./out/index.js
+bun ./out/index.js
+cp ./ripconfig.yml ~
+bun ./out/index.js
+ls ~
+bun ./out/index.js
+cd
+bun ./projects/ripper-scripts/out/index.js
+ls ~/Downloads/Videos/Shows
+vim ripconfig.yml
+cat ripconfig.yml
+ls /home/timon/Downloads/Videos/Shows
+bun ./projects/ripper-scripts/out/index.js
+bd_info /dev/sr0
+HandBrakeCLI  -i /dev/sr0 --title 0
+bun ./projects/ripper-scripts/out/index.js
+HandBrakeCLI -i /dev/sr0 --title 2 --encoder x264 --encoder-preset slower --quality 20 --optimize --all-audio --all-subtitles --encoder-tune film -o `./Downloads/Videos/Shows/Doctor Who (2005)/Season 11/Doctor Who S11E01.mkv`
+df -h
+ls `./Downloads/Videos/Shows/Doctor Who (2005)/Season 01/`
+sudo umount ./Downloads/Videos/
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld //192.168.178.104/Videos ./Downloads/Videos
+bun ./projects/ripper-scripts/out/index.js
+sudo umount ./Downloads/Videos/
+mount --help
+sudo chown -R timon ./Downloads/Videos/
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld //192.168.178.104/Videos ./Downloads/Videos
+ls Downloads/Videos/
+ls Downloads/Videos/Shows/
+ls -a Downloads/Videos/Shows/
+ls -lah Downloads/Videos/Shows/
+ls -la Downloads/Videos/Shows/
+sudo umount ./Downloads/Videos/
+sudo mount --mkdir -t cifs -o username=timon,password=helloworld,uid=1000 //192.168.178.104/Videos ./Downloads/Videos
+bun ./projects/ripper-scripts/out/index.js
+cd 'Downloads/Videos/Anime/Parasyte -the maxim- [tmdbid-61459]/Season 01/'
+ls
+^ls -v
+vim rename.sh
+bash rename.sh
+ls -lv
+^ls -lv
+^ls -av
+^ls -v
+vim rename.sh
+bash rename.sh
+ls
+rm rename.sh
+ansible-playbook -i inventory.yml playbook.yml --tags jellyfin
+ssh timon@timon-pc12
+ls
+ffprobe `./Parasyte -the maxim- S01E01.mp4`
+bun ./projects/ripper-scripts/out/index.js
+yay
+ssh timon@timon-pc12
+bun ./projects/ripper-scripts/out/index.js
+ssh pi@timon-pi4
+bun ./projects/ripper-scripts/out/index.js
+git add .
+gst
+gst
+git add src/
+git diff --staged
+git commit -m "update duration modifier"
+ggp
+cd ..
+mkdir fyne_test
+go init
+go create
+go --help
+go mod init its-treason/fyne_test
+ls
+rm go.mod
+cd fyne_test/
+go mod init its-treason/fyne_test
+go add fyne.io/fyne
+go install fyne.io/fyne
+go get fyne.io/fyne
+go run main.go
+go get fyne.io/fyne/v2@latest
+go mod tidy
+go run main.go
+bun ./projects/ripper-scripts/out/index.js
+ansible-playbook -i inventory.yml playbook.yml --tags jellyfin
+go run main.go
+yay
+go run fyne.io/demo@latest<\n>
+yay
+pacman -Syu
+sudo pacman -Syu
+yay
+ansible-playbook -i inventory.yml playbook.yml --tags jellyfin
+nmtui
+ansible-playbook -i inventory.yml playbook.yml --tags jellyfin
+yay
+ggl
+git log
+nvim
+cd .config/hypr/
+nvim .
+job
+job list
+job kill 1
+ansible-playbook -i inventory.yml playbook.yml --tags jellyfin
+cat /etc/lsb-release
+nvim .
+yadm
+yadm statuss
+yadm status
+yadm add .
+yadm status
+cd ..
+yadm add dunst

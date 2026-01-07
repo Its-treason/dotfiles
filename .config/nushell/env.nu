@@ -79,3 +79,5 @@ $env.PATH = (
 $env.DEBEMAIL = "packages@its-treason.com"
 $env.DEBFULLNAME = "Its Treason"
 
+source ~/.config/nushell/banner.nu
+
