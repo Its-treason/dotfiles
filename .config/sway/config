@@ -186,10 +186,10 @@ bar {
         statusline #c0caf5
         background $bg
 	# class            border    backgr.   text
-        focused_workspace  $prim     $prim     $fg
-        active_workspace   #414868   #414868   $fg
+        focused_workspace  $prim     $prim     $bg
+        active_workspace   #414868   #414868   $bg
         inactive_workspace #414868   #414868   $fg
-        urgent_workspace   $warn     $warn     $fg
+        urgent_workspace   $warn     $warn     $bg
     }
 }
 
