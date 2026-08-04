@@ -1,4 +1,5 @@
 # i3 config file (v4)
+
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -181,7 +182,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -f -c 282828
 exec_always --no-startup-id feh --recursive --bg-fill --randomize ~/Bilder/wallpaper/
 
 # Compositor
-exec --no-startup-id picom
+#exec --no-startup-id picom
 
 # Dunst
 exec --no-startup-id dunst -print >> ~/notfication_history.jsonl

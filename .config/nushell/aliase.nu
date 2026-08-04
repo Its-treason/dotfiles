@@ -65,3 +65,16 @@ def sshi [] {
   print Connection to $result;
   ssh $result;
 }
+
+
+def install-deb [link] {
+  curl -L ($link) -o /tmp/install-deb-tmp.deb; 
+  sudo dpkg -i /tmp/install-deb-tmp.deb;
+  rm /tmp/install-deb-tmp.deb;
+}
+
+def install-appimage [name, link] {
+  curl -L ($link) -o /tmp/install-appimage-tmp.appimage;
+  chmod +x /tmp/install-appimage-tmp.appimage;
+  mv /tmp/install-appimage-tmp.appimage ~/.local/bin/($name);
+}

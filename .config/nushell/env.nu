@@ -72,6 +72,8 @@ $env.PATH = (
     append '~/.spicetify/' |
     append '~/.local/share/nvim/mason/bin/' |
     append '~/.bun/bin/' |
+    append '~/.local/bin' |
+    append '/usr/local/go/bin' |
     # This will remove all Windows executables from WSL2
     where { |it| $it | str starts-with '/mnt/c' | $in != true }
 )
