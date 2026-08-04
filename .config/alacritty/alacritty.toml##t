@@ -13,7 +13,7 @@ size = 8.0
 family = "RobotoMono Nerd Font"
 
 [terminal]
-shell = "/home/{{ yadm.user }}/.cargo/bin/nu"
+shell = "/usr/bin/nu"
 
 [window]
 opacity = 0.95
