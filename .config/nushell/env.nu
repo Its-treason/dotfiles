@@ -23,7 +23,8 @@ $env.PATH = (
     append '~/.config/composer/vendor/bin/' |
     append '~/.yarn/bin' |
     append '~/.cargo/bin' |
-    append '~/.local/share/bin' |
+    append '~/.bun/bin/' |
+    append '~/.local/bin' |
     # This will remove all Windows executables from WSL2
     where { |it| $it | str starts-with '/mnt/c' | $in != true }
 )
