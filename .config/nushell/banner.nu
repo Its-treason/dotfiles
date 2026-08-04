@@ -18,7 +18,7 @@ let banner_msg = $"(ansi $highlight1)     __  ,(ansi reset)
 (ansi $foreground)It's been this long since (ansi $highlight1)Nushell(ansi reset)(ansi $foreground)'s first commit:(ansi reset)
 (ansi $foreground)(pretty-print-duration $dt)
 "
-print $banner_msg;
+  print $banner_msg;
 }
 
 banner
