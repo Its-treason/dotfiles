@@ -1,7 +1,7 @@
-# i3 config file (v4)
+# sway config file
 
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+# Load defaults
+include /etc/sway/config.d/*
 
 # Set mod key to win key
 set $mod Mod4
@@ -13,15 +13,6 @@ font pango:Roboto Regular 8
 input type:keyboard {
     xkb_layout "eu"
 }
-
-output DP-1 resolution 1920x1080@60Hz position 0,0
-output DP-2 resolution 2560x1440@144Hz position 1920,0
-output HDMI-A-1 resolution 1920x1080@60Hz position 4480,0
-
-set $bg_path "$HOME/Pictures/tokyo_night.png"
-output HDMI-A-1 bg $bg_path stretch
-output DP-2 bg $bg_path stretch
-output DP-1 bg $bg_path stretch
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -163,6 +154,9 @@ for_window [class="^.*"] border pixel 2
 gaps inner 6px
 smart_gaps on
 
+# Dont hide any border
+hide_edge_borders none
+
 # Only show popups / new floating windows when there belong to the currently focused app
 popup_during_fullscreen smart
 # Don't auto focus windows, just mark them as urgent
@@ -199,5 +193,10 @@ bar {
 # Flameshot force float
 for_window [app_id="flameshot"] floating enable
 
+# Set keyboard layout
+input "type:keyboard" {
+    xkb_layout eu
+}
 
-include /etc/sway/config.d/*
+include ~/.config/sway/conf-enabled/*
+
