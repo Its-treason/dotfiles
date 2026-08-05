@@ -135,6 +135,7 @@ bindsym $mod+r mode "resize"
 set $fg     #c0caf5
 set $bg     #16161d
 set $prim   #9aa5ce
+set $sec    #7dcfff
 set $warn   #f7768e
 
 # class                 border  backgr. text indicator child_border
@@ -178,8 +179,8 @@ bar {
         statusline #c0caf5
         background $bg
 	# class            border    backgr.   text
-        focused_workspace  $prim     $prim     $bg
-        active_workspace   #414868   #414868   $bg
+        focused_workspace  $sec      $sec      $bg
+        active_workspace   #414868   #414868   $fg
         inactive_workspace #414868   #414868   $fg
         urgent_workspace   $warn     $warn     $bg
     }
