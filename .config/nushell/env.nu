@@ -20,6 +20,8 @@
 $env.PATH = (
     $env.PATH |
     split row (char esep) |
+    # Add Mise shims to path
+    append '~/.local/share/mise/shims' |
     append '~/.config/composer/vendor/bin/' |
     append '~/.yarn/bin' |
     append '~/.cargo/bin' |
