@@ -18,3 +18,5 @@
 #     config nu --doc | nu-highlight | less -R
 
 source ./banner.nu
+
+use ($nu.default-config-dir | path join mise.nu)
