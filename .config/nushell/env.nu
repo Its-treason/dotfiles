@@ -31,6 +31,8 @@ $env.PATH = (
     where { |it| $it | str starts-with '/mnt/c' | $in != true }
 )
 
+$env.EDITOR = "vim"
+
 source ./aliase.nu
 
 

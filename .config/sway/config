@@ -1,7 +1,7 @@
-# i3 config file (v4)
+# sway config file
 
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+# Load defaults
+include /etc/sway/config.d/*
 
 # Set mod key to win key
 set $mod Mod4
@@ -154,6 +154,9 @@ for_window [class="^.*"] border pixel 2
 gaps inner 6px
 smart_gaps on
 
+# Dont hide any border
+hide_edge_borders none
+
 # Only show popups / new floating windows when there belong to the currently focused app
 popup_during_fullscreen smart
 # Don't auto focus windows, just mark them as urgent
@@ -190,5 +193,10 @@ bar {
 # Flameshot force float
 for_window [app_id="flameshot"] floating enable
 
+# Set keyboard layout
+input "type:keyboard" {
+    xkb_layout eu
+}
+
 include ~/.config/sway/conf-enabled/*
-include /etc/sway/config.d/*
+
