@@ -10,17 +10,18 @@ def --env "update-env" [] {
       } else {
         load-env {($var.name): $var.value}
       }
-    } else if $var.op == "hide" and $var.name in $env {
-      hide-env $var.name
+    } else if $var.op == "hide" {
+      try { hide-env $var.name }
     }
   }
 }
 export-env {
-  
+  $env.PATH = (r#'/home/tschuenemann/.local/share/mise/shims:/home/tschuenemann/.cargo/bin:/home/tschuenemann/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/usr/local/go/bin:/home/tschuenemann/.local/share/JetBrains/Toolbox/scripts:/home/tschuenemann/.lmstudio/bin:/home/tschuenemann/.lmstudio/bin:/home/tschuenemann/.config/composer/vendor/bin/:/home/tschuenemann/.yarn/bin:/home/tschuenemann/.cargo/bin:/home/tschuenemann/.bun/bin/:/home/tschuenemann/.local/bin'# | split row (char esep))
+
   'hide,ANSIBLE_GATHERING,
 hide,ANSIBLE_REMOTE_USER,
 hide,COMPOSER_IGNORE_PLATFORM_REQS,
-set,PATH,/home/tschuenemann/.local/bin:/home/tschuenemann/.local/bin:/home/tschuenemann/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/usr/local/go/bin:/home/tschuenemann/.lmstudio/bin:/home/tschuenemann/.lmstudio/bin:/usr/local/go/bin:/home/tschuenemann/.lmstudio/bin:/home/tschuenemann/.lmstudio/bin:/home/tschuenemann/.local/share/JetBrains/Toolbox/scripts:/home/tschuenemann/.local/share/JetBrains/Toolbox/scripts:/home/tschuenemann/.local/share/mise/shims:/home/tschuenemann/.config/composer/vendor/bin/:/home/tschuenemann/.yarn/bin:/home/tschuenemann/.cargo/bin:/home/tschuenemann/.bun/bin/:/home/tschuenemann/.local/bin
+set,PATH,/home/tschuenemann/.cargo/bin:/home/tschuenemann/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/usr/local/go/bin:/home/tschuenemann/.local/share/JetBrains/Toolbox/scripts:/home/tschuenemann/.lmstudio/bin:/home/tschuenemann/.lmstudio/bin:/home/tschuenemann/.config/composer/vendor/bin/:/home/tschuenemann/.yarn/bin:/home/tschuenemann/.cargo/bin:/home/tschuenemann/.bun/bin/:/home/tschuenemann/.local/bin
 hide,MISE_SHELL,
 hide,__MISE_DIFF,
 hide,__MISE_SESSION,' | parse vars | update-env

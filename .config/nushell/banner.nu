@@ -1,6 +1,9 @@
 use std/dt [datetime-diff, pretty-print-duration]
 
-def banner [] {
+def banner [--no-startup-time, --short] {
+if $short {
+  return $"Startup Time: ($nu.startup-time)"
+}
 let foreground = $env.config.color_config?.banner_foreground? | default "attr_normal"
 let highlight1 = $env.config.color_config?.banner_highlight1? | default "green"
 let highlight2 = $env.config.color_config?.banner_highlight2? | default "purple"
@@ -20,6 +23,4 @@ let banner_msg = $"(ansi $highlight1)     __  ,(ansi reset)
 "
   print $banner_msg;
 }
-
-banner
 
