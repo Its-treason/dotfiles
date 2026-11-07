@@ -7,6 +7,20 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "fast": true,
+        "mode": "auto",
+        "model": "opus"
+      },
+      "type": "registry"
+    }
+  },
+  "autosave": "on_focus_change",
+  "terminal": {
+    "dock": "right"
+  },
   "project_panel": {
     "dock": "left"
   },
@@ -15,8 +29,17 @@
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
     "dark": "Tokyo Night",
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy"
+        }
+      }
+    }
   },
 }
